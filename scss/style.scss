@@ -1,4 +1,3 @@
-@import "normalize.css";
 $primary-font: "Raleway",
 sans serif;
 $background-color-primary: #fff;
@@ -95,14 +94,11 @@ body {
     }
     .digits {
         display: block;
-        height: 12.5rem;
         background-color: $mediumgray;
         border-radius: 5px;
-        padding: 0.5rem;
         .wrapper_2 {
-            font-size: 1.55rem;
-            font-weight: bolder;
-            grid-gap: 0.4rem;
+            padding: 1rem;
+            grid-gap: 0.6rem;
             grid-column: 1 / span 4;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -121,11 +117,14 @@ body {
             .digit_star,
             .digit_0,
             .digit_ladder {
-                padding: 0.25rem 1rem 0.25rem 1rem;
+                padding: 0.25rem 1.2rem 0.25rem 1.2rem;
                 border: 1px solid $black;
                 background-color: $lightgray;
                 color: $black;
                 border-radius: 5px;
+                font-weight: bolder;
+                font-size: 1.55rem;
+                border: none;
             }
         }
     }

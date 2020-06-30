@@ -1,4 +1,3 @@
-@import url(c:\Users\matej\OneDrive\Documents\GitHub\call-me-maybe\call-me-maybe\scss\normalize.css);
 /* resets and base styles */
 * {
   -webkit-box-sizing: border-box;
@@ -104,15 +103,12 @@ body {
   }
   .digits {
     display: block;
-    height: 12.5rem;
     background-color: #717171;
     border-radius: 5px;
-    padding: 0.5rem;
   }
   .digits .wrapper_2 {
-    font-size: 1.55rem;
-    font-weight: bolder;
-    grid-gap: 0.4rem;
+    padding: 1rem;
+    grid-gap: 0.6rem;
     -ms-grid-column: 1;
     -ms-grid-column-span: 4;
     grid-column: 1 / span 4;
@@ -137,11 +133,14 @@ body {
   .digits .wrapper_2 .digit_star,
   .digits .wrapper_2 .digit_0,
   .digits .wrapper_2 .digit_ladder {
-    padding: 0.25rem 1rem 0.25rem 1rem;
+    padding: 0.25rem 1.2rem 0.25rem 1.2rem;
     border: 1px solid #000;
     background-color: #a4a4a4;
     color: #000;
     border-radius: 5px;
+    font-weight: bolder;
+    font-size: 1.55rem;
+    border: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
