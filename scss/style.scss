@@ -1,1 +1,132 @@
-@import "scss/normalize.css";
+@import "normalize.css";
+$primary-font: "Raleway",
+sans serif;
+$background-color-primary: #fff;
+$gray: #444;
+$lightgray: #a4a4a4;
+$black: #000;
+$smudgywhite: #ebebeb;
+$mediumgray: #717171;
+$red:#FF0000;
+$green: #008000;
+
+/* resets and base styles */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+body {
+    background-color: $background-color-primary;
+    color: $black;
+    font-family: $primary-font;
+    margin: 0;
+    padding: 0;
+}
+
+@media (min-width: 320px) {
+    #wrapper {
+        width: 320px;
+        height: 568px;
+        background-color: $lightgray;
+        border: 5px solid $black;
+        border-radius: 36px;
+        display: grid;
+        position: relative;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(3, [col] 75px);
+        grid-template-rows: repeat(6, [row] auto);
+        justify-content: center;
+    }
+    .header {
+        grid-column: 1 / 4;
+    }
+    .screen {
+        grid-column: 1 / 4;
+        grid-row: 2 / 3;
+    }
+    .button_left {
+        grid-column: 1 / 2;
+        grid-row: 3;
+    }
+    .button_right {
+        grid-column: 3 / 4;
+        grid-row: 3;
+    }
+    .digits {
+        grid-column: 1 / 4;
+        grid-row: 4;
+    }
+    .header {
+        background-color: $lightgray;
+        color: $black;
+        font-size: 20px;
+        text-align: center;
+        display: block;
+        padding-bottom: 0;
+        padding-top: 1rem;
+    }
+    .screen {
+        height: 14.5rem;
+        display: block;
+        background-color: $background-color-primary;
+        color: $black;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .button_left {
+        display: block;
+        height: 1.4rem;
+        width: 7.6rem;
+        background-color: green;
+    }
+    .button_right {
+        height: 1.4rem;
+        width: 7.2rem;
+        margin-left: -2.6rem;
+        display: block;
+        background-color: red;
+    }
+    .digits {
+        display: block;
+        height: 12.5rem;
+        background-color: $mediumgray;
+        border-radius: 5px;
+        padding: 0.5rem;
+        .wrapper_2 {
+            font-size: 1.55rem;
+            font-weight: bolder;
+            grid-gap: 0.4rem;
+            grid-column: 1 / span 4;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            color: $mediumgray;
+            justify-items: center;
+            .digit_1,
+            .digit_2,
+            .digit_3,
+            .digit_4,
+            .digit_5,
+            .digit_6,
+            .digit_7,
+            .digit_8,
+            .digit_9,
+            .digit_star,
+            .digit_0,
+            .digit_ladder {
+                padding: 0.25rem 1rem 0.25rem 1rem;
+                border: 1px solid $black;
+                background-color: $lightgray;
+                color: $black;
+                border-radius: 5px;
+            }
+        }
+    }
+}

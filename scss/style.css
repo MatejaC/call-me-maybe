@@ -1,0 +1,147 @@
+@import url(c:\Users\matej\OneDrive\Documents\GitHub\call-me-maybe\call-me-maybe\scss\normalize.css);
+/* resets and base styles */
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: "Raleway", sans serif;
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 320px) {
+  #wrapper {
+    width: 320px;
+    height: 568px;
+    background-color: #a4a4a4;
+    border: 5px solid #000;
+    border-radius: 36px;
+    display: -ms-grid;
+    display: grid;
+    position: relative;
+    grid-gap: 1rem;
+    -ms-grid-columns: ([col] 75px)[3];
+        grid-template-columns: repeat(3, [col] 75px);
+    -ms-grid-rows: ([row] auto)[6];
+        grid-template-rows: repeat(6, [row] auto);
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .header {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
+  }
+  .screen {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+  }
+  .button_left {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-column: 1 / 2;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+  .button_right {
+    -ms-grid-column: 3;
+    -ms-grid-column-span: 1;
+    grid-column: 3 / 4;
+    -ms-grid-row: 3;
+    grid-row: 3;
+  }
+  .digits {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
+    grid-column: 1 / 4;
+    -ms-grid-row: 4;
+    grid-row: 4;
+  }
+  .header {
+    background-color: #a4a4a4;
+    color: #000;
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    padding-bottom: 0;
+    padding-top: 1rem;
+  }
+  .screen {
+    height: 14.5rem;
+    display: block;
+    background-color: #fff;
+    color: #000;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  .button_left {
+    display: block;
+    height: 1.4rem;
+    width: 7.6rem;
+    background-color: green;
+  }
+  .button_right {
+    height: 1.4rem;
+    width: 7.2rem;
+    margin-left: -2.6rem;
+    display: block;
+    background-color: red;
+  }
+  .digits {
+    display: block;
+    height: 12.5rem;
+    background-color: #717171;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+  .digits .wrapper_2 {
+    font-size: 1.55rem;
+    font-weight: bolder;
+    grid-gap: 0.4rem;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 4;
+    grid-column: 1 / span 4;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    color: #717171;
+    justify-items: center;
+  }
+  .digits .wrapper_2 .digit_1,
+  .digits .wrapper_2 .digit_2,
+  .digits .wrapper_2 .digit_3,
+  .digits .wrapper_2 .digit_4,
+  .digits .wrapper_2 .digit_5,
+  .digits .wrapper_2 .digit_6,
+  .digits .wrapper_2 .digit_7,
+  .digits .wrapper_2 .digit_8,
+  .digits .wrapper_2 .digit_9,
+  .digits .wrapper_2 .digit_star,
+  .digits .wrapper_2 .digit_0,
+  .digits .wrapper_2 .digit_ladder {
+    padding: 0.25rem 1rem 0.25rem 1rem;
+    border: 1px solid #000;
+    background-color: #a4a4a4;
+    color: #000;
+    border-radius: 5px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
