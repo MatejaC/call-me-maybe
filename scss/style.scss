@@ -6,7 +6,7 @@ $lightgray: #a4a4a4;
 $black: #000;
 $smudgywhite: #ebebeb;
 $mediumgray: #717171;
-$red:#FF0000;
+$red: #ff0000;
 $green: #008000;
 
 /* resets and base styles */
@@ -71,13 +71,29 @@ body {
         padding-top: 1rem;
     }
     .screen {
-        height: 14.5rem;
         display: block;
+        height: 11.6rem;
         background-color: $background-color-primary;
         color: $black;
-        border-radius: 5px;
-        padding: 10px;
-        font-size: 16px;
+        input[type="tel"] {
+            display: block;
+            height: 11rem;
+            width: 100%;
+            font-size: 1.5rem;
+            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+            background-color: $background-color-primary;
+            color: $black;
+            border: none;
+            div {
+                display: block;
+                height: 8rem;
+                width: 100%;
+                padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+                background-color: $background-color-primary;
+                color: $black;
+                border: none;
+            }
+        }
     }
     .button_left {
         display: block;
@@ -97,6 +113,7 @@ body {
         background-color: $mediumgray;
         border-radius: 5px;
         .wrapper_2 {
+            display: block;
             padding: 1rem;
             grid-gap: 0.6rem;
             grid-column: 1 / span 4;
@@ -105,20 +122,8 @@ body {
             grid-template-rows: 1fr 1fr 1fr 1fr;
             color: $mediumgray;
             justify-items: center;
-            .digit_1,
-            .digit_2,
-            .digit_3,
-            .digit_4,
-            .digit_5,
-            .digit_6,
-            .digit_7,
-            .digit_8,
-            .digit_9,
-            .digit_star,
-            .digit_0,
-            .digit_ladder {
+            .digit {
                 padding: 0.25rem 1.2rem 0.25rem 1.2rem;
-                border: 1px solid $black;
                 background-color: $lightgray;
                 color: $black;
                 border-radius: 5px;

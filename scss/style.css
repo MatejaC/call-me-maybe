@@ -80,13 +80,29 @@ body {
     padding-top: 1rem;
   }
   .screen {
-    height: 14.5rem;
     display: block;
+    height: 11.6rem;
     background-color: #fff;
     color: #000;
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
+  }
+  .screen input[type="tel"] {
+    display: block;
+    height: 11rem;
+    width: 100%;
+    font-size: 1.5rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    background-color: #fff;
+    color: #000;
+    border: none;
+  }
+  .screen input[type="tel"] div {
+    display: block;
+    height: 8rem;
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    background-color: #fff;
+    color: #000;
+    border: none;
   }
   .button_left {
     display: block;
@@ -107,6 +123,7 @@ body {
     border-radius: 5px;
   }
   .digits .wrapper_2 {
+    display: block;
     padding: 1rem;
     grid-gap: 0.6rem;
     -ms-grid-column: 1;
@@ -121,20 +138,8 @@ body {
     color: #717171;
     justify-items: center;
   }
-  .digits .wrapper_2 .digit_1,
-  .digits .wrapper_2 .digit_2,
-  .digits .wrapper_2 .digit_3,
-  .digits .wrapper_2 .digit_4,
-  .digits .wrapper_2 .digit_5,
-  .digits .wrapper_2 .digit_6,
-  .digits .wrapper_2 .digit_7,
-  .digits .wrapper_2 .digit_8,
-  .digits .wrapper_2 .digit_9,
-  .digits .wrapper_2 .digit_star,
-  .digits .wrapper_2 .digit_0,
-  .digits .wrapper_2 .digit_ladder {
+  .digits .wrapper_2 .digit {
     padding: 0.25rem 1.2rem 0.25rem 1.2rem;
-    border: 1px solid #000;
     background-color: #a4a4a4;
     color: #000;
     border-radius: 5px;

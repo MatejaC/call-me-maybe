@@ -6,31 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="./scss/style.css" />
+    <link rel="stylesheet" type="text/css" href="/node_modules/normalize.css/normalize.css" />
 </head>
 
 <body>
     <div id="wrapper">
         <header class="header">callMeMaybe</header>
-        <div class="screen"></div>
-        <button type="submit" class="button_left"></button>
-        <button type="submit" class="button_right"></button>
+        <form class="screen">
+            <input type="tel" class="input" id="tel" name="add" />
+        </form>
+        <button type=" submit " class="button_left"></button>
+        <button type="submit " class="button_right"></button>
+
         <div class="digits">
-            <div class="wrapper_2">
-                <button type="submit" class="digit_1">1</button>
-                <button type="submit" class="digit_2">2</button>
-                <button type="submit" class="digit_3">3</button>
-                <button type="submit" class="digit_4">4</button>
-                <button type="submit" class="digit_5">5</button>
-                <button type="submit" class="digit_6">6</button>
-                <button type="submit" class="digit_7">7</button>
-                <button type="submit" class="digit_8">8</button>
-                <button type="submit" class="digit_9">9</button>
-                <button type="submit" class="digit_star">*</button>
-                <button type="submit" class="digit_0">0</button>
-                <button type="submit" class="digit_ladder">#</button>
-            </div>
+            <ul class="wrapper_2 display">
+                <li id="list">
+                    <button value="1 " class="digit">1</button>
+                </li>
+                <li>
+                    <button value=" 2 " class="digit">2</button>
+                </li>
+                <li>
+                    <button value="3 " class="digit">3</button>
+                </li>
+                <li>
+                    <button value="4 " class="digit">4</button>
+                </li>
+                <li>
+                    <button value="5 " class="digit">5</button>
+                </li>
+                <li>
+                    <button value="6 " class="digit">6</button>
+                </li>
+                <li>
+                    <button value="7 " class="digit">7</button>
+                </li>
+                <li>
+                    <button value="8 " class="digit">8</button>
+                </li>
+                <li>
+                    <button value="9 " class="digit">9</button>
+                </li>
+                <li>
+                    <button value="*" class="digit">*</button>
+                </li>
+                <li>
+                    <button value="0 " class="digit">0</button>
+                </li>
+                <li>
+                    <button value="# " class="digit">#</button>
+                </li>
+            </ul>
         </div>
     </div>
+    <script src="script.js "></script>
 </body>
 
 </html>
