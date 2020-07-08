@@ -1,42 +1,25 @@
 const digits = document.querySelectorAll('ul');
+const calling = document.querySelector('.calling');
 
-let input = document.querySelector('input');
-let screen = document.querySelector('.screen');
-const list = document.querySelector('.display');
 
 digits.forEach(digit => {
     digit.addEventListener('click', e => {
+        e.preventDefault();
         // console.log(e.target.value);
         document.getElementById('phoneNo').value += e.target.value;
     })
 })
 
 
+document.getElementById("button_green").addEventListener("click", validatePhoneNumber);
 
-/* const addDigit = document.querySelector('.screen');
-addDigit.addEventListener('submit', e => {
-    e.preventDefault();
-    const digit = addDigit.add.value;
-    console.log(digit);
-});
-
-
-
- function addNmb() {
-    let x = document.getElementsByClassName('digit').value;
-    document.getElementById('screen').innerHTML = x;
-}
-
-
-const addDigit = document.querySelector('ul');
-addDigit.addEventListener('click', e => {
-
-    if (e.target.classList.contains('digit')) {
-        e.preventDefault;
-        const digit = addDigit.add.value;
-        console.log(digit);
+function validatePhoneNumber() {
+    const phoneNumber = document.getElementById("phoneNo").value;
+    const phoneRGEX = /^09([0-9]{6,8})$/;
+    const phoneResult = phoneRGEX.test(phoneNumber);
+    if (phoneResult == false) {
+        alert('Please enter a valid phone number');
     } else {
-        console.log('oo')
+        calling.textContent = 'Calling...';
     }
-});
-  HTMLInputElement.value */
+}
