@@ -7,7 +7,7 @@ const list = document.querySelector('.display');
 digits.forEach(digit => {
     digit.addEventListener('click', e => {
         // console.log(e.target.value);
-        document.getElementById('tel').value += e.target.value;
+        document.getElementById('phoneNo').value += e.target.value;
     })
 })
 
