@@ -1,7 +1,10 @@
 const digits = document.querySelectorAll('ul');
 const calling = document.querySelector('.calling');
+document.getElementById("button_green").addEventListener("click", validatePhoneNumber);
+document.getElementById("button_green").addEventListener("click", emptyInput);
 
 
+// displaying numbers
 digits.forEach(digit => {
     digit.addEventListener('click', e => {
         e.preventDefault();
@@ -11,8 +14,7 @@ digits.forEach(digit => {
 })
 
 
-document.getElementById("button_green").addEventListener("click", validatePhoneNumber);
-
+// validation upon clicking green button
 function validatePhoneNumber() {
     const phoneNumber = document.getElementById("phoneNo").value;
     const phoneRGEX = /^09([0-9]{6,8})$/;
@@ -21,5 +23,14 @@ function validatePhoneNumber() {
         calling.textContent = 'This is not a valid number.';
     } else {
         calling.textContent = 'Calling...';
+    }
+}
+
+
+// clicking green button when input field is empty / numbers not entered
+function emptyInput() {
+    const phoneInput = document.getElementById("phoneNo");
+    if (phoneInput.value == "") {
+        calling.textContent = 'Please enter phone number.';
     }
 }
