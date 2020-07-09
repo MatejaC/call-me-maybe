@@ -18,7 +18,7 @@ function validatePhoneNumber() {
     const phoneRGEX = /^09([0-9]{6,8})$/;
     const phoneResult = phoneRGEX.test(phoneNumber);
     if (phoneResult == false) {
-        alert('This is not a valid number.');
+        calling.textContent = 'This is not a valid number.';
     } else {
         calling.textContent = 'Calling...';
     }
