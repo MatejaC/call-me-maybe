@@ -2,6 +2,7 @@ const digits = document.querySelectorAll('ul');
 const calling = document.querySelector('.calling');
 document.getElementById("button_green").addEventListener("click", validatePhoneNumber);
 document.getElementById("button_green").addEventListener("click", emptyInput);
+document.getElementById("button_red").addEventListener("click", clearAll);
 
 
 // displaying numbers
@@ -33,4 +34,12 @@ function emptyInput() {
     if (phoneInput.value == "") {
         calling.textContent = 'Please enter phone number.';
     }
+}
+
+
+// the red button clears cellphone screen
+function clearAll() {
+    const phoneInput = document.getElementById("phoneNo");
+    phoneInput.value = "";
+    calling.innerHTML = "";
 }
