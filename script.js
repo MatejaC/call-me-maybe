@@ -1,5 +1,6 @@
 const digits = document.querySelectorAll('ul');
 const calling = document.querySelector('.calling');
+const numberbox = document.querySelector('.numberbox');
 document.getElementById("button_green").addEventListener("click", validatePhoneNumber);
 document.getElementById("button_green").addEventListener("click", emptyInput);
 document.getElementById("button_red").addEventListener("click", clearAll);
@@ -17,7 +18,7 @@ digits.forEach(digit => {
 
 // validation upon clicking green button
 function validatePhoneNumber() {
-    const phoneNumber = document.getElementById("phoneNo").value;
+    let phoneNumber = document.getElementById("phoneNo").value;
     const phoneRGEX = /^09([0-9]{6,8})$/;
     const phoneResult = phoneRGEX.test(phoneNumber);
     if (phoneResult == false) {
@@ -25,12 +26,38 @@ function validatePhoneNumber() {
     } else {
         calling.textContent = 'Calling...';
     }
+    storeCallsToLocalStorage();
 }
+
+
+
+function storeCallsToLocalStorage() {
+    if (localStorage.getItem('calls') === null) {
+        calls = [];
+    } else {
+        calls = JSON.parse(localStorage.getItem('calls'));
+    }
+    console.log(localStorage);
+    let phoneNmb = document.getElementById("phoneNo").value;
+    calls.push(phoneNmb);
+
+    localStorage.setItem('calls', JSON.stringify(calls));
+    var calls = JSON.parse(localStorage.getItem('calls'));
+}
+
+
+
+
+// if a user swiftly presses the green button two times in a row a list of successful calls is shown on cellphone screen 
+
+// document.getElementById("button_green").addEventListener("ondblclick", showValidCalls);
+//document.getElementById("numberbox").innerHTML;
+
 
 
 // clicking green button when input field is empty / numbers not entered
 function emptyInput() {
-    const phoneInput = document.getElementById("phoneNo");
+    let phoneInput = document.getElementById("phoneNo");
     if (phoneInput.value == "") {
         calling.textContent = 'Please enter phone number.';
     }
@@ -39,7 +66,9 @@ function emptyInput() {
 
 // the red button clears cellphone screen
 function clearAll() {
-    const phoneInput = document.getElementById("phoneNo");
+    let phoneInput = document.getElementById("phoneNo");
     phoneInput.value = "";
     calling.innerHTML = "";
 }
+
+//Using clear() will clear all local storage.localStorage.clear()
