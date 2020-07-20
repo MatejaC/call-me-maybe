@@ -1,16 +1,14 @@
 const digits = document.querySelectorAll('ul');
-const calling = document.querySelector('.calling');
-const numberbox = document.querySelector('.numberbox');
+let calling = document.querySelector('.calling');
 document.getElementById("button_green").addEventListener("click", validatePhoneNumber);
 document.getElementById("button_green").addEventListener("click", emptyInput);
 document.getElementById("button_red").addEventListener("click", clearAll);
-//document.getElementById("button_green").addEventListener("ondblclick", showValidCalls);
+
 
 // displaying numbers
 digits.forEach(digit => {
     digit.addEventListener('click', e => {
         e.preventDefault();
-        // console.log(e.target.value);
         document.getElementById('phoneNo').value += e.target.value;
     })
 })
@@ -22,40 +20,25 @@ function validatePhoneNumber() {
     const phoneResult = phoneRGEX.test(phoneNumber);
     if (phoneResult == false) {
         calling.textContent = 'This is not a valid number.';
-        storeUnsuccessCallsToLocalStorage();
+        storeCallsToLocalStorage("unsuccessCalls");
     } else {
         calling.textContent = 'Calling...';
-        storeSuccessCallsToLocalStorage();
+        storeCallsToLocalStorage("successCalls");
     }
 }
-
 // fuction for storing sucessful calls
-function storeSuccessCallsToLocalStorage() {
-    if (localStorage.getItem('successCalls') === null) {
+function storeCallsToLocalStorage(callsKey) {
+    if (localStorage.getItem(callsKey) === null) {
         calls = [];
     } else {
-        calls = JSON.parse(localStorage.getItem('successCalls'));
+        calls = JSON.parse(localStorage.getItem(callsKey));
     }
     let phoneNmb = document.getElementById("phoneNo").value;
     calls.push(phoneNmb);
-
-    localStorage.setItem('successCalls', JSON.stringify(calls));
-    var calls = JSON.parse(localStorage.getItem('successCalls'));
+    localStorage.setItem(callsKey, JSON.stringify(calls));
+    var calls = JSON.parse(localStorage.getItem(callsKey));
 }
 
-// function for storing unsucessful calls
-function storeUnsuccessCallsToLocalStorage() {
-    if (localStorage.getItem('unsuccessCalls') === null) {
-        calls = [];
-    } else {
-        calls = JSON.parse(localStorage.getItem('unsuccessCalls'));
-    }
-    let phoneNmb = document.getElementById("phoneNo").value;
-    calls.push(phoneNmb);
-
-    localStorage.setItem('unsuccessCalls', JSON.stringify(calls));
-    var calls = JSON.parse(localStorage.getItem('unsuccessCalls'));
-}
 
 // clicking green button when input field is empty / numbers not entered
 function emptyInput() {
@@ -72,9 +55,18 @@ function clearAll() {
     calling.innerHTML = "";
 }
 
+// if a user swiftly presses the green button two times in a row a list of successful calls is shown on cellphone screen
 
-// if a user swiftly presses the green button two times in a row a list of successful calls is shown on cellphone screen 
+let ul = document.querySelector('.numberbox');
+let green_btn = document.getElementById("button_green");
+green_btn.addEventListener('dblclick', () => {
+    ul.innerHTML = JSON.parse(localStorage.getItem('successCalls'));
 
-// document.getElementById("button_green").addEventListener("ondblclick", showValidCalls);
-//document.getElementById("numberbox").innerHTML;
-//Using clear() will clear all local storage.localStorage.clear()
+    let listOfSuccesCalls = JSON.parse(localStorage.getItem('successCalls'));
+    let html = ``;
+    listOfSuccesCalls.forEach(successCalls => {
+        html += `<li style="color: purple">${successCalls}</li>`;
+    });
+    console.log(html);
+    ul.innerHTML = html;
+})
