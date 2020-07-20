@@ -70,3 +70,18 @@ green_btn.addEventListener('dblclick', () => {
     console.log(html);
     ul.innerHTML = html;
 })
+
+// if a user swiftly presses the red button two times in a row a list of unsuccessful calls is shown on cellphone screen
+
+let red_btn = document.getElementById("button_red");
+red_btn.addEventListener('dblclick', () => {
+    ul.innerHTML = JSON.parse(localStorage.getItem('unsuccessCalls'));
+
+    let listOfUnsuccesCalls = JSON.parse(localStorage.getItem('unsuccessCalls'));
+    let html = ``;
+    listOfUnsuccesCalls.forEach(unsuccessCalls => {
+        html += `<li style="color: darkpurple">${unsuccessCalls}</li>`;
+    });
+    console.log(html);
+    ul.innerHTML = html;
+})
