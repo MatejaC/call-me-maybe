@@ -1,20 +1,12 @@
-/* resets and base styles */
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
+  margin: 0;
 }
 
 .clearfix {
   zoom: 1;
-}
-
-body {
-  background-color: #fff;
-  color: #000;
-  font-family: "Raleway", sans serif;
-  margin: 0;
-  padding: 0;
 }
 
 @media (min-width: 320px) {
@@ -22,19 +14,24 @@ body {
     width: 320px;
     height: 568px;
     background-color: #a4a4a4;
-    border: 5px solid #000;
-    border-radius: 36px;
+    border: 0.3em solid #000;
+    border-radius: 1.3em;
+    padding: 0.5em;
     display: -ms-grid;
     display: grid;
     position: relative;
-    grid-gap: 1rem;
-    -ms-grid-columns: ([col] 75px)[3];
-        grid-template-columns: repeat(3, [col] 75px);
+    grid-gap: .6em;
+    -ms-grid-columns: ([col] 5.4em)[3];
+        grid-template-columns: repeat(3, [col] 5.4em);
     -ms-grid-rows: ([row] auto)[6];
         grid-template-rows: repeat(6, [row] auto);
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-border-radius: 1.3em;
+    -moz-border-radius: 1.3em;
+    -ms-border-radius: 1.3em;
+    -o-border-radius: 1.3em;
   }
   .header {
     -ms-grid-column: 1;
@@ -46,80 +43,88 @@ body {
     -ms-grid-column-span: 3;
     grid-column: 1 / 4;
     -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    grid-row: 2 / 3;
+    -ms-grid-row-span: 2;
+    grid-row: 2 / 4;
   }
   .button_left {
     -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1 / 2;
-    -ms-grid-row: 3;
-    grid-row: 3;
+    -ms-grid-column-span: 2;
+    grid-column: 1 / 3;
+    -ms-grid-row: 4;
+    grid-row: 4;
   }
   .button_right {
     -ms-grid-column: 3;
     -ms-grid-column-span: 1;
     grid-column: 3 / 4;
-    -ms-grid-row: 3;
-    grid-row: 3;
+    -ms-grid-row: 4;
+    grid-row: 4;
   }
   .digits {
     -ms-grid-column: 1;
     -ms-grid-column-span: 3;
     grid-column: 1 / 4;
-    -ms-grid-row: 4;
-    grid-row: 4;
+    -ms-grid-row: 5;
+    grid-row: 5;
   }
   .header {
+    font-family: "Open Sans", sans-serif;
     background-color: #a4a4a4;
     color: #000;
-    font-size: 20px;
+    font-size: 1.3em;
     text-align: center;
     display: block;
-    padding-bottom: 0;
-    padding-top: 1rem;
+    margin-bottom: -1em;
   }
   .screen {
     display: block;
-    height: 11.6rem;
-    background-color: #fff;
     color: #000;
+    background-color: #fff;
+    padding-bottom: .5em;
+    padding-top: 2.7em;
+    border: 0.1em groove #444;
+    border-radius: .5em;
+    -webkit-border-radius: .5em;
+    -moz-border-radius: .5em;
+    -ms-border-radius: .5em;
+    -o-border-radius: .5em;
   }
-  .screen input[type="tel"] {
+  .screen input[type=text] {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     display: block;
-    height: 11rem;
-    width: 100%;
-    font-size: 1.5rem;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    font-size: 1.3em;
+    padding-left: .8em;
+    padding-bottom: .5em;
+    margin-top: -1.5em;
     background-color: #fff;
     color: #000;
     border: none;
   }
-  .screen input[type="tel"] div {
+  .message,
+  .numberbox {
     display: block;
-    height: 8rem;
-    width: 100%;
-    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-    background-color: #fff;
-    color: #000;
-    border: none;
+    height: 5em;
+    font-size: 1.2rem;
+    padding-left: 1.6em;
+    list-style: none;
   }
   .button_left {
     display: block;
-    height: 1.4rem;
-    width: 7.6rem;
+    height: 1.8em;
+    width: 8em;
     background-color: green;
   }
   .button_right {
-    height: 1.4rem;
-    width: 7.2rem;
-    margin-left: -2.6rem;
+    height: 1.8em;
+    width: 8em;
+    margin-left: -1.4em;
     display: block;
     background-color: red;
   }
   .digits {
     display: block;
-    background-color: #717171;
+    background-color: #444;
     border-radius: 5px;
   }
   .digits .wrapper_2 {
@@ -135,7 +140,7 @@ body {
         grid-template-columns: 1fr 1fr 1fr;
     -ms-grid-rows: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
-    color: #717171;
+    color: #444;
     justify-items: center;
   }
   .digits .wrapper_2 .digit {

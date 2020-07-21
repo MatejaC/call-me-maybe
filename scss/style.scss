@@ -1,31 +1,28 @@
-$primary-font: "Raleway",
-sans serif;
+$primary-font: 'Oswald',
+sans-serif;
+$secondary-font: 'Open Sans',
+sans-serif;
+$font-family: 'Oswald',
+sans-serif,
+'Open Sans',
+sans-serif;
 $background-color-primary: #fff;
 $gray: #444;
 $lightgray: #a4a4a4;
 $black: #000;
 $smudgywhite: #ebebeb;
-$mediumgray: #717171;
 $red: #ff0000;
 $green: #008000;
 
-/* resets and base styles */
-
+//resets and base styles
 * {
     box-sizing: border-box;
     padding: 0;
+    margin: 0;
 }
 
 .clearfix {
     zoom: 1;
-}
-
-body {
-    background-color: $background-color-primary;
-    color: $black;
-    font-family: $primary-font;
-    margin: 0;
-    padding: 0;
 }
 
 @media (min-width: 320px) {
@@ -33,85 +30,110 @@ body {
         width: 320px;
         height: 568px;
         background-color: $lightgray;
-        border: 5px solid $black;
-        border-radius: 36px;
+        border: 0.3em solid $black;
+        border-radius: 1.3em;
+        padding: 0.5em;
         display: grid;
         position: relative;
-        grid-gap: 1rem;
-        grid-template-columns: repeat(3, [col] 75px);
+        grid-gap: .6em;
+        grid-template-columns: repeat(3, [col] 5.4em);
         grid-template-rows: repeat(6, [row] auto);
         justify-content: center;
+        -webkit-border-radius: 1.3em;
+        -moz-border-radius: 1.3em;
+        -ms-border-radius: 1.3em;
+        -o-border-radius: 1.3em;
     }
+
     .header {
         grid-column: 1 / 4;
     }
+
     .screen {
         grid-column: 1 / 4;
-        grid-row: 2 / 3;
+        grid-row: 2 / 4;
     }
+
     .button_left {
-        grid-column: 1 / 2;
-        grid-row: 3;
-    }
-    .button_right {
-        grid-column: 3 / 4;
-        grid-row: 3;
-    }
-    .digits {
-        grid-column: 1 / 4;
+        grid-column: 1 / 3;
         grid-row: 4;
     }
+
+    .button_right {
+        grid-column: 3 / 4;
+        grid-row: 4;
+    }
+
+    .digits {
+        grid-column: 1 / 4;
+        grid-row: 5;
+    }
+
     .header {
+        font-family: $secondary-font;
         background-color: $lightgray;
         color: $black;
-        font-size: 20px;
+        font-size: 1.3em;
         text-align: center;
         display: block;
-        padding-bottom: 0;
-        padding-top: 1rem;
+        margin-bottom: -1em;
     }
+
     .screen {
         display: block;
-        height: 11.6rem;
-        background-color: $background-color-primary;
         color: $black;
-        input[type="tel"] {
+        background-color: $background-color-primary;
+        padding-bottom: .5em;
+        padding-top: 2.7em;
+        border: .1em groove $gray;
+        border-radius: .5em;
+        -webkit-border-radius: .5em;
+        -moz-border-radius: .5em;
+        -ms-border-radius: .5em;
+        -o-border-radius: .5em;
+
+        input[type=text] {
+            box-sizing: border-box;
             display: block;
-            height: 11rem;
-            width: 100%;
-            font-size: 1.5rem;
-            padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+            font-size: 1.3em;
+            padding-left: .8em;
+            padding-bottom: .5em;
+            margin-top: -1.5em;
             background-color: $background-color-primary;
             color: $black;
             border: none;
-            div {
-                display: block;
-                height: 8rem;
-                width: 100%;
-                padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-                background-color: $background-color-primary;
-                color: $black;
-                border: none;
-            }
         }
     }
+
+    .message,
+    .numberbox {
+        display: block;
+        height: 5em;
+        font-size: 1.2rem;
+        padding-left: 1.6em;
+        list-style: none;
+    }
+
     .button_left {
         display: block;
-        height: 1.4rem;
-        width: 7.6rem;
+        height: 1.8em;
+        width: 8em;
         background-color: green;
     }
+
     .button_right {
-        height: 1.4rem;
-        width: 7.2rem;
-        margin-left: -2.6rem;
+        height: 1.8em;
+        width: 8em;
+        margin-left: -1.4em;
         display: block;
         background-color: red;
     }
+
     .digits {
         display: block;
-        background-color: $mediumgray;
+        background-color: $gray;
         border-radius: 5px;
+
         .wrapper_2 {
             display: block;
             padding: 1rem;
@@ -120,8 +142,9 @@ body {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr 1fr 1fr;
-            color: $mediumgray;
+            color: $gray;
             justify-items: center;
+
             .digit {
                 padding: 0.25rem 1.2rem 0.25rem 1.2rem;
                 background-color: $lightgray;
