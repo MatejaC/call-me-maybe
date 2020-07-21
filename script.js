@@ -1,5 +1,5 @@
 const digits = document.querySelectorAll('ul');
-let calling = document.querySelector('.calling');
+let message = document.querySelector('.message');
 document.getElementById("button_green").addEventListener("click", validatePhoneNumber);
 document.getElementById("button_green").addEventListener("click", emptyInput);
 document.getElementById("button_red").addEventListener("click", clearAll);
@@ -19,10 +19,10 @@ function validatePhoneNumber() {
     const phoneRGEX = /^09([0-9]{6,8})$/;
     const phoneResult = phoneRGEX.test(phoneNumber);
     if (phoneResult == false) {
-        calling.textContent = 'This is not a valid number.';
+        message.textContent = 'This is not a valid number.';
         storeCallsToLocalStorage("unsuccessCalls");
     } else {
-        calling.textContent = 'Calling...';
+        message.textContent = 'Calling...';
         storeCallsToLocalStorage("successCalls");
     }
 }
@@ -44,7 +44,7 @@ function storeCallsToLocalStorage(callsKey) {
 function emptyInput() {
     let phoneInput = document.getElementById("phoneNo");
     if (phoneInput.value == "") {
-        calling.textContent = 'Please enter phone number.';
+        message.textContent = 'Please enter phone number.';
     }
 }
 
@@ -52,7 +52,7 @@ function emptyInput() {
 function clearAll() {
     let phoneInput = document.getElementById("phoneNo");
     phoneInput.value = "";
-    calling.innerHTML = "";
+    message.innerHTML = "";
 }
 
 // if a user swiftly presses the green button two times in a row a list of successful calls is shown on cellphone screen
@@ -80,7 +80,7 @@ red_btn.addEventListener('dblclick', () => {
     let listOfUnsuccesCalls = JSON.parse(localStorage.getItem('unsuccessCalls'));
     let html = ``;
     listOfUnsuccesCalls.forEach(unsuccessCalls => {
-        html += `<li style="color: darkpurple">${unsuccessCalls}</li>`;
+        html += `<li style="color:darkpurple,padding-left:10px">${unsuccessCalls}</li>`;
     });
     console.log(html);
     ul.innerHTML = html;
