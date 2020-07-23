@@ -1,4 +1,4 @@
-const digits = document.querySelectorAll('ul');
+const digits = document.querySelectorAll('.digit');
 let message = document.querySelector('.message');
 document.getElementById("button_green").addEventListener("click", validatePhoneNumber);
 document.getElementById("button_green").addEventListener("click", emptyInput);
