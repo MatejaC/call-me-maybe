@@ -85,3 +85,9 @@ red_btn.addEventListener('dblclick', () => {
     console.log(html);
     ul.innerHTML = html;
 })
+
+// help section(chat bubbles)__when the page opens only the first message("Help!") is visible
+document.getElementsByTagName("BODY")[0].onpageshow = function () { myFunction() };
+function myFunction() {
+    document.getElementById("help").innerHTML = "Help!";
+};
