@@ -4,7 +4,7 @@ document.getElementById("button_green").addEventListener("click", validatePhoneN
 document.getElementById("button_green").addEventListener("click", emptyInput);
 document.getElementById("button_red").addEventListener("click", clearAll);
 
-
+// phone section
 // displaying numbers
 digits.forEach(digit => {
     digit.addEventListener('click', e => {
@@ -38,7 +38,6 @@ function storeCallsToLocalStorage(callsKey) {
     localStorage.setItem(callsKey, JSON.stringify(calls));
     var calls = JSON.parse(localStorage.getItem(callsKey));
 }
-
 
 // clicking green button when input field is empty / numbers not entered
 function emptyInput() {
@@ -82,12 +81,33 @@ red_btn.addEventListener('dblclick', () => {
     listOfUnsuccesCalls.forEach(unsuccessCalls => {
         html += `<li style="color:darkpurple,padding-left:10px">${unsuccessCalls}</li>`;
     });
-    console.log(html);
     ul.innerHTML = html;
 })
 
-// help section(chat bubbles)__when the page opens only the first message("Help!") is visible
+
+// help section
+// when the page opens only the first message("Help!") is visible
 document.getElementsByTagName("BODY")[0].onpageshow = function () { myFunction() };
 function myFunction() {
-    document.getElementById("help").innerHTML = "Help!";
+    document.getElementById("help_button").innerHTML = "Help!";
 };
+
+//when a user clicks "Help!" message other messages are made visible one by one with 2 seconds delay between them being displayed
+
+let help_button = document.getElementById("help_button");
+document.getElementById("help_button").addEventListener('click', () => {
+    setTimeout(() => {
+        document.getElementById("message_first").innerHTML = "Enter number formated as 09xxxxxx or 09xxxxxxx";
+    }, 2000);
+    setTimeout(() => {
+        document.getElementById("message_second").innerHTML = "Double click the green button to see list of successful calls";
+    }, 4000);
+    setTimeout(() => {
+        document.getElementById("message_third").innerHTML = "Double click the red button to see list of unsuccessful calls";
+    }, 6000);
+
+    setTimeout(() => {
+        document.getElementById("message_fourth").innerHTML =
+            '<a href="https://github.com/MatejaC/call-me-maybe">Click here for more info!</a>';
+    }, 8000);
+});
