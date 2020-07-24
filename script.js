@@ -107,7 +107,8 @@ document.getElementById("help_button").addEventListener('click', () => {
     }, 6000);
 
     setTimeout(() => {
-        document.getElementById("message_fourth").innerHTML =
-            '<a href="https://github.com/MatejaC/call-me-maybe">Click here for more info!</a>';
-    }, 8000);
+        var txt = "here";
+        document.getElementById("message_fourth").innerHTML = ("<p>Click " + txt.link("https://github.com/MatejaC/call-me-maybe") + ' for more info!' + "</p>");
+    }
+        , 8000)
 });
