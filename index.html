@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0 user-scalable=0" />
+    <title>callMeMaybe</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@300;400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./scss/style.css" />
@@ -12,7 +12,15 @@
 
 <body>
     <div class="phone">
-        <header class="header">callMeMaybe</header>
+        <header class="header">callMeMaybe
+            <button class="help_button" id="help_button" onclick="toggle_visibility('messages');">Help!</button>
+            <div id="messages">
+                <p class="message_first show-message" id="message_first"></p>
+                <p class="message_second" id="message_second"></p>
+                <p class="message_second" id="message_third"></p>
+                <p class="message_second" id="message_fourth"></p>
+            </div>
+        </header>
         <form class="screen">
             <input type="text" class="phoneNumber" id="phoneNo" name="phoneNumber" required />
             <ul class="message numberbox" id="numberbox"></ul>
@@ -61,11 +69,9 @@
             </ul>
         </div>
     </div>
-    <button class="help" id="help_button">Help!</button>
-    <p class="message_first show-message" id="message_first"></p>
-    <p class="message_second" id="message_second"></p>
-    <p class="message_second" id="message_third"></p>
-    <p class="message_second" id="message_fourth"></p>
+
+
+
     <script src="script.js "></script>
 </body>
 

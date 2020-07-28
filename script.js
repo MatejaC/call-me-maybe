@@ -94,6 +94,16 @@ function myFunction() {
 
 //when a user clicks "Help!" message other messages are made visible one by one with 2 seconds delay between them being displayed
 
+//first toogle help button
+function toggle_visibility(messages) {
+    var e = document.getElementById(messages);
+    if (e.style.display == 'block')
+        e.style.display = 'none';
+    else
+        e.style.display = 'block';
+}
+
+
 let help_button = document.getElementById("help_button");
 document.getElementById("help_button").addEventListener('click', () => {
     setTimeout(() => {
