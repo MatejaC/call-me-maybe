@@ -49,9 +49,11 @@ function emptyInput() {
 
 // the red button clears cellphone screen
 function clearAll() {
+    let messages = document.querySelector('.messages');
     let phoneInput = document.getElementById("phoneNo");
     phoneInput.value = "";
     message.innerHTML = "";
+    messages.innerHTML = "";
 }
 
 // if a user swiftly presses the green button two times in a row a list of successful calls is shown on cellphone screen
@@ -107,18 +109,16 @@ function toggle_visibility(messages) {
 let help_button = document.getElementById("help_button");
 document.getElementById("help_button").addEventListener('click', () => {
     setTimeout(() => {
-        document.getElementById("message_first").innerHTML = "Enter number formated as 09xxxxxx or 09xxxxxxx";
+        document.getElementById("message_first").style.visibility = "visible";
     }, 2000);
     setTimeout(() => {
-        document.getElementById("message_second").innerHTML = "Double click the green button to see list of successful calls";
+        document.getElementById("message_second").style.visibility = "visible";
     }, 4000);
     setTimeout(() => {
-        document.getElementById("message_third").innerHTML = "Double click the red button to see list of unsuccessful calls";
+        document.getElementById("message_third").style.visibility = "visible";
     }, 6000);
 
     setTimeout(() => {
-        var txt = "here";
-        document.getElementById("message_fourth").innerHTML = ("<p>Click " + txt.link("https://github.com/MatejaC/call-me-maybe") + ' for more info!' + "</p>");
-    }
-        , 8000)
-});
+        document.getElementById("message_fourth").style.visibility = "visible";
+    }, 8000)
+})

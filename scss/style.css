@@ -25,6 +25,11 @@ html *:after {
   zoom: 1.0;
 }
 
+div {
+  text-align: justify;
+  position: relative;
+}
+
 .row {
   position: relative;
 }
@@ -38,18 +43,6 @@ html *:after {
 .col {
   width: 100%;
   float: left;
-}
-
-div {
-  text-align: justify;
-  position: relative;
-}
-
-div:after {
-  display: inline-block;
-  width: 100%;
-  height: 0;
-  content: '';
 }
 
 .header {
@@ -73,24 +66,24 @@ div:after {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-column: 1 / 2;
-  -ms-grid-row: 6;
-  grid-row: 6;
+  -ms-grid-row: 5;
+  grid-row: 5;
 }
 
 .button_right {
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
   grid-column: 3 / 4;
-  -ms-grid-row: 6;
-  grid-row: 6;
+  -ms-grid-row: 5;
+  grid-row: 5;
 }
 
 .digits {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1 / 4;
-  -ms-grid-row: 7;
-  grid-row: 7;
+  -ms-grid-row: 6;
+  grid-row: 6;
 }
 
 .phone {
@@ -100,7 +93,6 @@ div:after {
       grid-template-columns: repeat(3, [col] auto);
   -ms-grid-rows: ([row] auto)[7];
       grid-template-rows: repeat(7, [row] auto);
-  grid-gap: .3em;
   max-height: 812px;
   max-width: 414px;
   background-color: #a4a4a4;
@@ -111,6 +103,7 @@ div:after {
   -moz-border-radius: 1.5em;
   -ms-border-radius: 1.5em;
   -o-border-radius: 1.5em;
+  z-index: 1;
 }
 
 .header {
@@ -122,36 +115,22 @@ div:after {
   font-family: "Open Sans", sans-serif;
   background-color: #a4a4a4;
   color: #000;
-  font-size: 1.4em;
+  font-size: 1.5em;
   font-weight: bold;
-  letter-spacing: .05em;
   text-align: center;
   padding-top: .35em;
-  -webkit-padding-after: .5em;
-          padding-block-end: .5em;
-}
-
-.header #messages {
-  position: absolute;
-  z-index: 10;
-  font-size: 0.7em;
+  margin-bottom: -1em;
 }
 
 .screen {
   display: inline-block;
-  max-width: 100%;
+  min-height: 400px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #000;
   background-color: #fff;
-  padding: 3.5em .5em .5em .5em;
-  margin: .3em;
-  border: 0.1em groove #444;
-  border-radius: .5em;
-  -webkit-border-radius: .5em;
-  -moz-border-radius: .5em;
-  -ms-border-radius: .5em;
-  -o-border-radius: .5em;
+  padding: 2.2em .5em 13em .5em;
+  margin: 2.2em .3em .3em .3em;
 }
 
 .screen input[type=text] {
@@ -177,8 +156,56 @@ div:after {
   height: 5em;
   font-size: 1.2em;
   padding-left: 1.6em;
-  padding-bottom: 2em;
+  padding-top: .2em;
+  margin: 0;
   list-style: none;
+}
+
+.bubble {
+  position: relative;
+  padding: .2em;
+  margin: -10.2em 0em 11.5em 0em;
+  border: .2em solid #5a8f00;
+  color: #333;
+  background: #fff;
+  /* css3 */
+  border-radius: 10px;
+  z-index: 10;
+  position: 0;
+}
+
+/* THE TRIANGLE */
+.bubble:before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  /* value = - border-top-width - border-bottom-width */
+  left: 40px;
+  /* controls horizontal position */
+  border-width: 18px 15px 0;
+  border-style: solid;
+  border-color: #5a8f00 transparent;
+  /* reduce the damage in FF3.0 */
+  display: block;
+  width: 0;
+  z-index: 10;
+}
+
+/* creates the smaller  triangle */
+.bubble:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  /* value = - border-top-width - border-bottom-width */
+  left: 47px;
+  /* value = (:before left) + (:before border-left) - (:after border-left) */
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: #fff transparent;
+  /* reduce the damage in FF3.0 */
+  display: block;
+  width: 0;
+  z-index: 10;
 }
 
 .button_left {
@@ -203,14 +230,15 @@ div:after {
 .digits {
   display: block;
   background-color: #444;
-  border-radius: 5px;
-  margin: .6em;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin: 0;
 }
 
 .digits .digits--display {
   display: -ms-grid;
   display: grid;
-  padding: 2em;
+  padding: .6em;
   grid-gap: 0.7rem;
   -ms-grid-columns: 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr;
@@ -221,12 +249,12 @@ div:after {
 }
 
 .digits .digits--display .digit {
-  padding: 0.25rem 1.2rem 0.25rem 1.2rem;
+  padding: 0.25em 1.2em 0.2em 1.2em;
   background-color: #a4a4a4;
   color: #000;
   border-radius: 5px;
   font-weight: bolder;
-  font-size: 1.55rem;
+  font-size: 1.55em;
   border: none;
 }
 
@@ -234,19 +262,22 @@ div:after {
   cursor: pointer;
 }
 
-@media (min-width: 414px) {
+@media (min-width: 375px) {
   .phone {
-    margin: 2em;
+    height: 100%;
+  }
+  .screen {
+    padding: 2em .5em .3em .5em;
   }
 }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) {
   .header {
     margin-right: 2em;
   }
   .screen {
-    margin-right: .3em;
-    padding-right: 0;
+    margin: 2.2em 0em .3em 0em;
+    padding: 2.2em .5em 0 .5em;
   }
 }
 /*# sourceMappingURL=style.css.map */

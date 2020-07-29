@@ -8,22 +8,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@300;400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./scss/style.css" />
+    <title>callMeMaybe</title>
 </head>
 
 <body>
     <div class="phone">
         <header class="header">callMeMaybe
-            <button class="help_button" id="help_button" onclick="toggle_visibility('messages');">Help!</button>
-            <div id="messages">
-                <p class="message_first show-message" id="message_first"></p>
-                <p class="message_second" id="message_second"></p>
-                <p class="message_second" id="message_third"></p>
-                <p class="message_second" id="message_fourth"></p>
-            </div>
+            <button class="help_button" id="help_button" onclick="toggle_visibility('messages');">Help</button>
         </header>
         <form class="screen">
             <input type="text" class="phoneNumber" id="phoneNo" name="phoneNumber" required />
             <ul class="message numberbox" id="numberbox"></ul>
+
+            <div id="messages" class="messages">
+                <p class="message_first bubble show-message" id="message_first" style="visibility:hidden;">"Enter number
+                    formated as 09xxxxxx or
+                    09xxxxxxx"</p>
+                <p class="message_second bubble" id="message_second" style="visibility:hidden;">"Double click the green
+                    button to see list of
+                    successful calls"</p>
+                <p class="message_third bubble" id="message_third" style="visibility:hidden;">"Double click the red
+                    button to see list of
+                    unsuccessful
+                    calls"</p>
+                <p class="message_fourth bubble" id="message_fourth" style="visibility:hidden;">Click <a
+                        href="https://github.com/MatejaC/call-me-maybe">here</a> for more info!"</p>
+            </div>
         </form>
         <button class="button_left" id="button_green"></button>
         <button class="button_right" id="button_red"></button>
@@ -69,7 +79,6 @@
             </ul>
         </div>
     </div>
-
 
 
     <script src="script.js "></script>
