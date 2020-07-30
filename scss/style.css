@@ -25,11 +25,6 @@ html *:after {
   zoom: 1.0;
 }
 
-div {
-  text-align: justify;
-  position: relative;
-}
-
 .row {
   position: relative;
 }
@@ -58,8 +53,8 @@ div {
   -ms-grid-column-span: 3;
   grid-column: 1 / 4;
   -ms-grid-row: 2;
-  -ms-grid-row-span: 4;
-  grid-row: 2 / 6;
+  -ms-grid-row-span: 3;
+  grid-row: 2 / 5;
 }
 
 .button_left {
@@ -91,8 +86,9 @@ div {
   display: grid;
   -ms-grid-columns: ([col] auto)[3];
       grid-template-columns: repeat(3, [col] auto);
-  -ms-grid-rows: ([row] auto)[7];
-      grid-template-rows: repeat(7, [row] auto);
+  -ms-grid-rows: ([row] auto)[6];
+      grid-template-rows: repeat(6, [row] auto);
+  grid-gap: .1em;
   max-height: 812px;
   max-width: 414px;
   background-color: #a4a4a4;
@@ -107,8 +103,8 @@ div {
 }
 
 .header {
-  border-top-right-radius: .5em;
-  border-top-left-radius: .5em;
+  /* border-top-right-radius: .5em;
+border-top-left-radius: .5em; */
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: inline-block;
@@ -119,29 +115,31 @@ div {
   font-weight: bold;
   text-align: center;
   padding-top: .35em;
-  margin-bottom: -1em;
+  -webkit-padding-after: .5em;
+          padding-block-end: .5em;
+  margin-bottom: -1.5em;
 }
 
 .screen {
   display: inline-block;
-  min-height: 400px;
+  min-height: 300px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #000;
   background-color: #fff;
-  padding: 2.2em .5em 13em .5em;
-  margin: 2.2em .3em .3em .3em;
+  padding: 2.2em .5em 0em .5em;
+  margin: 2.2em .3em 13em .3em;
 }
 
 .screen input[type=text] {
+  display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  height: 100%;
   max-width: 100%;
   display: block;
   font-size: 1.3em;
   padding-left: .8em;
-  padding-bottom: .3em;
-  margin-top: -1.5em;
   background-color: #fff;
   color: #000;
   border: none;
@@ -149,14 +147,11 @@ div {
 
 .screen .message,
 .screen .numberbox {
-  display: inline-block;
   max-width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 5em;
   font-size: 1.2em;
   padding-left: 1.6em;
-  padding-top: .2em;
   margin: 0;
   list-style: none;
 }
@@ -164,14 +159,14 @@ div {
 .bubble {
   position: relative;
   padding: .2em;
-  margin: -10.2em 0em 11.5em 0em;
   border: .2em solid #5a8f00;
   color: #333;
   background: #fff;
   /* css3 */
   border-radius: 10px;
+  margin-top: -2em;
+  margin-bottom: 2.4em;
   z-index: 10;
-  position: 0;
 }
 
 /* THE TRIANGLE */
@@ -278,6 +273,13 @@ div {
   .screen {
     margin: 2.2em 0em .3em 0em;
     padding: 2.2em .5em 0 .5em;
+  }
+}
+
+@media (min-width: 426px) {
+  .phone {
+    height: 100%;
+    margin: 0 6em 0 6em;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -49,15 +49,21 @@ function emptyInput() {
 
 // the red button clears cellphone screen
 function clearAll() {
-    let messages = document.querySelector('.messages');
+    let message_first = document.getElementById('message_first');
+    let message_second = document.getElementById('message_second');
+    let message_third = document.getElementById('message_third');
+    let message_fourth = document.getElementById('message_fourth');
     let phoneInput = document.getElementById("phoneNo");
     phoneInput.value = "";
     message.innerHTML = "";
-    messages.innerHTML = "";
+    message_first.style.visibility = "hidden";
+    message_second.style.visibility = "hidden";
+    message_third.style.visibility = "hidden";
+    message_fourth.style.visibility = "hidden";
 }
 
-// if a user swiftly presses the green button two times in a row a list of successful calls is shown on cellphone screen
 
+// if a user swiftly presses the green button two times in a row a list of successful calls is shown on cellphone screen
 let ul = document.querySelector('.numberbox');
 let green_btn = document.getElementById("button_green");
 green_btn.addEventListener('dblclick', () => {
@@ -73,7 +79,6 @@ green_btn.addEventListener('dblclick', () => {
 })
 
 // if a user swiftly presses the red button two times in a row a list of unsuccessful calls is shown on cellphone screen
-
 let red_btn = document.getElementById("button_red");
 red_btn.addEventListener('dblclick', () => {
     ul.innerHTML = JSON.parse(localStorage.getItem('unsuccessCalls'));
@@ -99,12 +104,11 @@ function myFunction() {
 //first toogle help button
 function toggle_visibility(messages) {
     var e = document.getElementById(messages);
-    if (e.style.display == 'block')
+    if (e.style.display === 'block')
         e.style.display = 'none';
     else
         e.style.display = 'block';
 }
-
 
 let help_button = document.getElementById("help_button");
 document.getElementById("help_button").addEventListener('click', () => {
