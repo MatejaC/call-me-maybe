@@ -14,7 +14,38 @@ $smudgywhite: #ebebeb;
 $red: #ff0000;
 $green: #008000;
 
-//resets and base styles
+
+/* mixins */
+@mixin box-sizing($box-sizing: border-box) {
+    -webkit-box-sizing: $box-sizing;
+    -moz-box-sizing: $box-sizing;
+    box-sizing: $box-sizing;
+}
+
+@mixin center-vertically($position: absolute) {
+    position: $position;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+@mixin text-size-adjust {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+/* resets and base styles */
+* {
+    @include box-sizing;
+    @include text-size-adjust;
+
+    &:focus {
+        outline: none;
+    }
+}
+
 html {
     box-sizing: border-box;
 
@@ -45,14 +76,24 @@ html {
     float: left;
 }
 
-.header {
+.top-bar {
     grid-column: 1 / 4;
     grid-row: 1;
 }
 
+.notification {
+    grid-column: 1 / 4;
+    grid-row: 2;
+}
+
+.callMeMaybe {
+    grid-column: 1 / 4;
+    grid-row: 2;
+}
+
 .screen {
     grid-column: 1 / 4;
-    grid-row: 2 / 5;
+    grid-row: 3 / 5;
 }
 
 .button_left {
@@ -71,6 +112,7 @@ html {
 }
 
 .phone {
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(3, [col] auto);
     grid-template-rows: repeat(6, [row] auto);
@@ -78,31 +120,108 @@ html {
     max-height: 812px;
     max-width: 414px;
     background-color: $lightgray;
-    border: 0.8em solid $black;
-    border-radius: 1.5em;
+    border: 0.4em solid $black;
+    border-radius: 1.8em;
     grid-auto-flow: dense;
     -webkit-border-radius: 1.3em;
     -moz-border-radius: 1.5em;
     -ms-border-radius: 1.5em;
     -o-border-radius: 1.5em;
-    z-index: 1;
-}
-
-.header {
-    /* border-top-right-radius: .5em;
-border-top-left-radius: .5em; */
-    box-sizing: border-box;
-    display: inline-block;
-    font-family: $secondary-font;
+    box-shadow: -5px 10px 10px 3px rgba(0, 0, 0, .4);
     background-color: $lightgray;
     color: $black;
-    font-size: 1.5em;
-    font-weight: bold;
-    text-align: center;
-    padding-top: .35em;
-    padding-block-end: .5em;
-    margin-bottom: -1.5em;
+    font-size: 1.2em;
 }
+
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    border-top-right-radius: .6em;
+    border-top-left-radius: .6em;
+    // flex-basis: auto;
+    // flex-flow: row;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: .35em;
+
+    .camera {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 18px;
+        height: 18px;
+        background-color: #444;
+        border-radius: 50%;
+        box-shadow: inset 0 0 1px 2px #000;
+
+        & .outer-circle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 10px;
+            height: 10px;
+            background-color: #222;
+            border-radius: 50%;
+
+            & .smaller-circle {
+                width: 5px;
+                height: 5px;
+                background-color: #000;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .speaker {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 5em;
+        height: .3em;
+        background: #e0e0e0;
+        border-radius: .2em;
+        box-shadow: 0 .2em .2em 0 rgba(0, 0, 0, 0.14) inset, 0 .1em .5em 0px rgba(0, 0, 0, 0.12) inset, 0 .3em .1em -0.2em rgba(0, 0, 0, 0.2) inset;
+        // position: absolute;
+        top: 14px;
+    }
+
+    .help_button {
+        display: flex;
+        float: left;
+    }
+}
+
+/** Notification bar */
+.notification {
+    display: inline-block;
+    font-size: .7em;
+    padding-top: .5em;
+    color: #fff;
+    text-align: right;
+    padding-right: 1.5em;
+}
+
+.notification ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.notification ul li {
+    margin: 0 0;
+    display: inline;
+}
+
+.callMeMaybe {
+    display: inline-block;
+    padding-top: .5em;
+    font-size: .85em;
+    color: #fff;
+    text-align: left;
+    padding-left: 2em;
+}
+
 
 .screen {
     display: inline-block;
@@ -111,7 +230,7 @@ border-top-left-radius: .5em; */
     color: $black;
     background-color: $background-color-primary;
     padding: 2.2em .5em 0em .5em;
-    margin: 2.2em .3em 13em .3em;
+    margin: .6em .3em 0em .3em;
 
     input[type=text] {
         display: inline-block;
@@ -134,7 +253,7 @@ border-top-left-radius: .5em; */
         box-sizing: border-box;
         font-size: 1.2em;
         padding-left: 1.6em;
-        // padding-top: .2em;
+        padding-top: .2em;
         margin: 0;
         list-style: none;
     }
@@ -169,7 +288,6 @@ border-top-left-radius: .5em; */
     /* reduce the damage in FF3.0 */
     display: block;
     width: 0;
-    z-index: 10;
 }
 
 /* creates the smaller  triangle */
@@ -186,10 +304,10 @@ border-top-left-radius: .5em; */
     /* reduce the damage in FF3.0 */
     display: block;
     width: 0;
-    z-index: 10;
 }
 
 .button_left {
+    display: inline-block;
     max-width: 100%;
     box-sizing: border-box;
     height: 1.8em;
@@ -202,21 +320,24 @@ border-top-left-radius: .5em; */
     box-sizing: border-box;
     height: 1.8em;
     width: 5em;
-    display: block;
+    display: inline-block;
     background-color: red;
 }
 
+
 .digits {
     display: block;
-    background-color: $gray;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    background-color: $lightgray;
+    border-bottom-left-radius: 1.5em;
+    border-bottom-right-radius: 1.5em;
+
     margin: 0;
 
     .digits--display {
         display: grid;
+        list-style: none;
         padding: .6em;
-        grid-gap: 0.7rem;
+        grid-gap: 0.3em;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         color: $gray;
@@ -224,7 +345,7 @@ border-top-left-radius: .5em; */
 
         .digit {
             padding: 0.25em 1.2em 0.2em 1.2em;
-            background-color: $lightgray;
+            background-color: $green;
             color: $black;
             border-radius: 5px;
             font-weight: bolder;
@@ -238,23 +359,34 @@ border-top-left-radius: .5em; */
     }
 }
 
-@media (min-width:375px) {
+
+@media (min-width:320px) {
     .phone {
         height: 100%;
+        margin-right: -.4em;
     }
 
     .screen {
-        padding: 2em .5em .3em .5em;
+        margin: .5em -14em 0 0;
+
     }
 }
 
-@media (min-width:320px) {
-    .header {
-        margin-right: 2em;
-    }
+@media (min-width:375px) {
+    .phone {
+        height: 100%;
+        padding-right: 0em;
 
+        .screen {
+            padding: 2em .5em .3em .5em;
+            margin: 0;
+        }
+    }
+}
+
+@media (min-width:425px) {
     .screen {
-        margin: 2.2em 0em .3em 0em;
+        margin: 0;
         padding: 2.2em .5em 0 .5em;
     }
 }

@@ -7,80 +7,68 @@
     <title>callMeMaybe</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@300;400&display=swap"
         rel="stylesheet">
+    <script src="https://use.fontawesome.com/0180a0b1e2.js"></script>
     <link rel="stylesheet" type="text/css" href="./scss/style.css" />
     <title>callMeMaybe</title>
 </head>
 
 <body>
     <div class="phone">
-        <header class="header">callMeMaybe
-            <button class="help_button" id="help_button" onclick="toggle_visibility('messages');">Help!</button>
-        </header>
-        <div class="screen">
-            <input type="text" class="phoneNumber" id="phoneNo" name="phoneNumber" required />
-            <ul class="message numberbox" id="numberbox"></ul>
 
-            <div id="messages" class="messages">
-                <p class="message_first bubble show-message" id="message_first" style="visibility:hidden;">"Enter number
-                    formated as 09xxxxxx or
-                    09xxxxxxx"</p>
-                <p class="message_second bubble" id="message_second" style="visibility:hidden;">"Double click the green
-                    button to see list of
-                    successful calls"</p>
-                <p class="message_third bubble" id="message_third" style="visibility:hidden;">"Double click the red
-                    button to see list of
-                    unsuccessful
-                    calls"</p>
-                <p class="message_fourth bubble" id="message_fourth" style="visibility:hidden;">Click <a
-                        href="https://github.com/MatejaC/call-me-maybe">here</a> for more info!"</p>
+        <div class="top-bar">
+            <div class="camera">
+                <div class="outer-circle">
+                    <div class="smaller-circle"></div>
+                </div>
             </div>
+            <div class="speaker"></div>
+            <button class="help_button" id="help_button" onclick="toggle_visibility('messages');">Help !</button>
         </div>
-        <button class="button_left" id="button_green"></button>
-        <button class="button_right" id="button_red"></button>
 
+        <div class="notification">
+            <ul>
+                <li><i class="fa fa-clock-o" aria-hidden=" true"></i></li>
+                <li><i class="fa fa-wifi" aria-hidden="true"></i></li>
+                <li><i class="fa fa-signal" aria-hidden="true"></i></li>
+                <li><i class="fa fa-battery-half" aria-hidden=" true"></i></li>
+                <li>14.16</li>
+            </ul>
+
+        </div>
+        <div class="callMeMaybe">callMeMaybe</div>
+        <div class="screen"><input type="text" class="phoneNumber" id="phoneNo" name="phoneNumber" required />
+            <ul class="message numberbox" id="numberbox"></ul>
+            <div id="messages" class="messages">
+                <p class="message_first bubble show-message" id="message_first" style="visibility:hidden;">"Enter
+                    number
+                    formated as 09xxxxxx or 09xxxxxxx"</p>
+                <p class="message_second bubble" id="message_second" style="visibility:hidden;">"Double click the
+                    green
+                    button to see list of successful calls"</p>
+                <p class="message_third bubble" id="message_third" style="visibility:hidden;">"Double click the red
+                    button to see list of unsuccessful calls"</p>
+                <p class="message_fourth bubble" id="message_fourth" style="visibility:hidden;">Click <a
+                        href="https://github.com/MatejaC/call-me-maybe">here</a>for more info !"</p>
+            </div>
+        </div><button class="button_left" id="button_green"></button><button class="button_right"
+            id="button_red"></button>
         <div class="digits">
             <ul class="digits--display">
-                <li id="list">
-                    <button value="1" class="digit">1</button>
-                </li>
-                <li>
-                    <button value="2" class="digit">2</button>
-                </li>
-                <li>
-                    <button value="3" class="digit">3</button>
-                </li>
-                <li>
-                    <button value="4" class="digit">4</button>
-                </li>
-                <li>
-                    <button value="5" class="digit">5</button>
-                </li>
-                <li>
-                    <button value="6" class="digit">6</button>
-                </li>
-                <li>
-                    <button value="7" class="digit">7</button>
-                </li>
-                <li>
-                    <button value="8" class="digit">8</button>
-                </li>
-                <li>
-                    <button value="9" class="digit">9</button>
-                </li>
-                <li>
-                    <button value="*" class="digit">*</button>
-                </li>
-                <li>
-                    <button value="0" class="digit">0</button>
-                </li>
-                <li>
-                    <button value="#" class="digit">#</button>
-                </li>
+                <li id="list"><button value="1" class="digit">1</button></li>
+                <li><button value="2" class="digit">2</button></li>
+                <li><button value="3" class="digit">3</button></li>
+                <li><button value="4" class="digit">4</button></li>
+                <li><button value="5" class="digit">5</button></li>
+                <li><button value="6" class="digit">6</button></li>
+                <li><button value="7" class="digit">7</button></li>
+                <li><button value="8" class="digit">8</button></li>
+                <li><button value="9" class="digit">9</button></li>
+                <li><button value="*" class="digit">*</button></li>
+                <li><button value="0" class="digit">0</button></li>
+                <li><button value="#" class="digit">#</button></li>
             </ul>
         </div>
     </div>
-
-
     <script src="script.js "></script>
 </body>
 
