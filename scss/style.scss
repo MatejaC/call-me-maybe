@@ -95,17 +95,17 @@ html {
 
 .button_left {
     grid-column: 1 / 2;
-    grid-row: 5;
+    grid-row: 4;
 }
 
 .button_right {
     grid-column: 3 / 4;
-    grid-row: 5;
+    grid-row: 4;
 }
 
 .digits {
     grid-column: 1 / 4;
-    grid-row: 6;
+    grid-row: 5;
 }
 
 .phone {
@@ -113,7 +113,7 @@ html {
     display: grid;
     grid-template-columns: repeat(3, [col] auto);
     grid-template-rows: repeat(6, [row] auto);
-    grid-gap: .1em;
+    grid-gap: 0;
     max-height: 812px;
     max-width: 427px;
     background-color: $lightgray;
@@ -192,7 +192,7 @@ html {
 /** Notification bar */
 .notification {
     display: inline-block;
-    font-size: .7em;
+    font-size: .8em;
     padding-top: .5em;
     color: #fff;
     text-align: right;
@@ -218,7 +218,7 @@ html {
 .callMeMaybe {
     display: inline-block;
     padding-top: .5em;
-    font-size: .85em;
+    font-size: .9em;
     color: #fff;
     text-align: left;
     padding-left: 2em;
@@ -231,8 +231,8 @@ html {
     box-sizing: border-box;
     color: $black;
     background-color: $background-color-primary;
-    padding: 2.2em .5em 0em .5em;
-    margin: .6em .3em 0em .3em;
+    padding: 2em .5em .3em .5em;
+    margin: .5em 0 0 0;
 
     input[type=text] {
         display: inline-block;
@@ -310,26 +310,31 @@ html {
 
 .button_left {
     display: inline-block;
+    border-radius: .7em;
     max-width: 100%;
     box-sizing: border-box;
-    height: 1.8em;
-    width: 5em;
+    height: 2em;
+    width: 4.4em;
+    margin-left: 1.2em;
     background-color: green;
+    border: none;
 }
 
 .button_right {
     max-width: 100%;
     box-sizing: border-box;
-    height: 1.8em;
-    width: 5em;
+    border-radius: .7em;
+    height: 2em;
+    width: 4.4em;
     display: inline-block;
     background-color: red;
+    border: none;
 }
 
 
 .digits {
     display: block;
-    background-color: $lightgray;
+    background-color: white;
     border-bottom-left-radius: 1.5em;
     border-bottom-right-radius: 1.5em;
 
@@ -338,38 +343,119 @@ html {
     .digits--display {
         display: grid;
         list-style: none;
-        padding: .6em;
-        grid-gap: 0.3em;
+        margin: 0.5em 0.8em 0.5em;
+        padding: 0;
+        grid-gap: 0;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
-        color: $gray;
         justify-items: center;
 
         .digit {
-            padding: 0.25em 1.2em 0.2em 1.2em;
-            background-color: $green;
-            color: $black;
-            border-radius: 5px;
-            font-weight: bolder;
-            font-size: 1.55em;
-            border: none;
-
-            & :hover {
-                cursor: pointer;
-            }
+            font-weight: normal;
         }
     }
 }
+
+.button {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
+    background-color: #eeeeee;
+    background: linear-gradient(top, #fbfbfb, #e1e1e1);
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid #d4d4d4;
+    font-family: $primary-font;
+    color: #666666;
+    text-shadow: 0 1px 1px white;
+    margin: 0.2em 0;
+    text-decoration: none;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #eeeeee;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dcdcdc));
+    background: -webkit-linear-gradient(top, #ffffff, #dcdcdc);
+    background: -moz-linear-gradient(top, #ffffff, #dcdcdc);
+    background: -o-linear-gradient(top, #ffffff, #dcdcdc);
+    background: linear-gradient(top, #ffffff, #dcdcdc);
+}
+
+.button:active {
+    -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
+    -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
+    background: #eeeeee;
+    color: #bbbbbb;
+}
+
+
+input.button,
+button.button {
+    height: 1.8em;
+    cursor: pointer;
+}
+
+
+.button-block {
+    display: block;
+}
+
+
+.button.disabled,
+.button.disabled:hover,
+.button.disabled:active,
+input.button:disabled,
+button.button:disabled {
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    background: #EEE;
+    border: 1px solid #dddddd;
+    text-shadow: 0 1px 1px white;
+    color: #CCC;
+    cursor: default;
+}
+
+
+.button-wrap {
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f2f2f2));
+    background: -webkit-linear-gradient(top, #e3e3e3, #f2f2f2);
+    background: -moz-linear-gradient(top, #e3e3e3, #f2f2f2);
+    background: -o-linear-gradient(top, #e3e3e3, #f2f2f2);
+    background: linear-gradient(top, #e3e3e3, #f2f2f2);
+    border-radius: 100%;
+    -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.04);
+    -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.04);
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.04);
+    padding: 10px;
+    display: inline-block;
+}
+
+
+
+.button-circle {
+    border-radius: .5em;
+    box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.2);
+    width: 2.2em;
+    height: 2em;
+    padding: 0px;
+    border-width: 0.2em;
+    font-size: 1.3em;
+}
+
+
 
 
 @media (min-width:320px) {
     .phone {
         height: 100%;
         margin-right: -.4em;
+        font-size: 1.1em;
     }
 
     .screen {
-        margin: .5em -14em 0 0;
+        padding: 2em .5em .3em .5em;
 
     }
 }
@@ -377,18 +463,33 @@ html {
 @media (min-width:375px) {
     .phone {
         height: 100%;
-        padding-right: 0em;
+        margin: 0 1em 0;
+
 
         .screen {
             padding: 2em .5em .3em .5em;
-            margin: 0;
         }
     }
 }
 
 @media (min-width:425px) {
+    .phone {
+        margin: 0 2em 0;
+    }
+
     .screen {
-        margin: 0;
         padding: 2.2em .5em 0 .5em;
+    }
+}
+
+@media (min-width:768px) {
+    .phone {
+        margin: 4em 12em 4em;
+    }
+}
+
+@media (min-width:1024px) {
+    .phone {
+        margin: 3em 52em 20em 15em;
     }
 }
