@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+Pro:wght@400;600&display=swap");
 /* mixins */
 /* resets and base styles */
 * {
@@ -122,7 +123,7 @@ html *:after {
       grid-template-rows: repeat(6, [row] auto);
   grid-gap: .1em;
   max-height: 812px;
-  max-width: 414px;
+  max-width: 427px;
   background-color: #a4a4a4;
   border: 0.4em solid #000;
   border-radius: 1.8em;
@@ -239,6 +240,11 @@ html *:after {
 .notification ul li {
   margin: 0 0;
   display: inline;
+}
+
+#time {
+  font-family: "Source Sans Pro", sans-serif;
+  font-style: normal;
 }
 
 .callMeMaybe {
@@ -413,13 +419,6 @@ html *:after {
   .screen {
     margin: 0;
     padding: 2.2em .5em 0 .5em;
-  }
-}
-
-@media (min-width: 426px) {
-  .phone {
-    height: 100%;
-    margin: 0 6em 0 6em;
   }
 }
 /*# sourceMappingURL=style.css.map */

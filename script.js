@@ -126,3 +126,18 @@ document.getElementById("help_button").addEventListener('click', () => {
         document.getElementById("message_fourth").style.visibility = "visible";
     }, 8000)
 })
+
+// show real time on phone
+function startTime() {
+    let today = new Date();
+    let h = today.getHours();
+    let m = today.getMinutes();
+    m = checkTime(m);
+    document.getElementById('time').innerHTML =
+        h + ":" + m;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) { i = "0" + i };  // add zero in front of numbers < 10
+    return i;
+}

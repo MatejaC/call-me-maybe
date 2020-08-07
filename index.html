@@ -5,16 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0 user-scalable=0" />
     <title>callMeMaybe</title>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@300;400&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+Pro:wght@400;600&display=swap"
         rel="stylesheet">
     <script src="https://use.fontawesome.com/0180a0b1e2.js"></script>
     <link rel="stylesheet" type="text/css" href="./scss/style.css" />
     <title>callMeMaybe</title>
 </head>
 
-<body>
-    <div class="phone">
+<body onload="startTime()">
 
+    <div class="phone">
         <div class="top-bar">
             <div class="camera">
                 <div class="outer-circle">
@@ -31,7 +31,7 @@
                 <li><i class="fa fa-wifi" aria-hidden="true"></i></li>
                 <li><i class="fa fa-signal" aria-hidden="true"></i></li>
                 <li><i class="fa fa-battery-half" aria-hidden=" true"></i></li>
-                <li>14.16</li>
+                <li><i id="time"></i></li>
             </ul>
 
         </div>
