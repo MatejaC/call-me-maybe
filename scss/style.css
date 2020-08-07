@@ -495,15 +495,33 @@ button.button:disabled {
   }
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .phone {
-    margin: 4em 12em 4em;
+    margin: 4em 12em 10em;
   }
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .phone {
-    margin: 3em 52em 20em 15em;
+    margin: 3em 29em 18em 10em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .phone {
+    margin: 3em 38em 18em 10em;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .phone {
+    margin: 3em 48em 20em 15em;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .phone {
+    margin: 3em 60em 20em 30em;
   }
 }
 /*# sourceMappingURL=style.css.map */
