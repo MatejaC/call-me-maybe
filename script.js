@@ -72,7 +72,7 @@ green_btn.addEventListener('dblclick', () => {
     let listOfSuccesCalls = JSON.parse(localStorage.getItem('successCalls'));
     let html = ``;
     listOfSuccesCalls.forEach(successCalls => {
-        html += `<li style="color: purple">${successCalls}</li>`;
+        html += `<li style="color: #212121">${successCalls}</li>`;
     });
     console.log(html);
     ul.innerHTML = html;
