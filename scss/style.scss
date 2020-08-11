@@ -1,10 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+Pro:wght@400;600&display=swap");
-$primary-font: "Source Sans Pro",
-sans-serif;
-$secondary-font: "Open Sans",
-sans-serif;
+$primary-font: "Source Sans Pro", sans-serif;
+$secondary-font: "Open Sans", sans-serif;
 $background-color-primary: #ccebff;
-$background-color-digits:transparent;
+$background-color-digits: #57a7ba;
 $gray: #4d4d4d;
 $bg-camera: #444;
 $bg-camera-outer-circle: #222;
@@ -13,13 +11,21 @@ $darkgray: #212121;
 $black: black;
 $blackish: #383838;
 $red: #ff5959;
-$green: #b8e356;
+$green: #91cf6f;
 
 /* mixins */
 @mixin box-sizing($box-sizing: border-box) {
     -webkit-box-sizing: $box-sizing;
     -moz-box-sizing: $box-sizing;
     box-sizing: $box-sizing;
+}
+
+@mixin center-vertically($position: absolute) {
+    position: $position;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 
 @mixin text-size-adjust {
@@ -68,11 +74,6 @@ html {
     float: left;
 }
 
-nav {
-    grid-column: 1 / 4;
-    grid-row: 0 / 2;
-}
-
 .top-bar {
     grid-column: 1 / 4;
     grid-row: 1;
@@ -88,11 +89,6 @@ nav {
     grid-row: 2;
 }
 
-main {
-    grid-column: 1 / 4;
-    grid-row: 3 / 7;
-}
-
 .screen {
     grid-column: 1 / 4;
     grid-row: 3 / 5;
@@ -100,35 +96,34 @@ main {
 
 .button_left {
     grid-column: 1 / 2;
-    grid-row: 6;
+    grid-row: 4;
 }
 
 .button_right {
     grid-column: 3 / 4;
-    grid-row: 6;
+    grid-row: 4;
 }
 
 .digits {
     grid-column: 1 / 4;
-    grid-row: 7;
+    grid-row: 6;
 }
 
 .phone-bottom-circle {
     grid-column: 1 / 4;
-    grid-row: 8;
+    grid-row: 7;
 }
-
 
 .phone {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(3, [col] auto);
-    grid-template-rows: repeat(8, [row] auto);
+    grid-template-rows: repeat(7, [row] auto);
     grid-gap: 0;
     max-height: 812px;
     max-width: 427px;
     background-color: $gray;
-    border: 0.25em solid $blackish;
+    border: 0.4em solid $blackish;
     border-radius: 1.8em;
     grid-auto-flow: dense;
     -webkit-border-radius: 1.3em;
@@ -148,8 +143,8 @@ main {
     background-color: $gray;
     justify-content: space-around;
     width: 100%;
-    padding-top: 0.25em;
-    padding-bottom: 0.2em;
+    padding-top: 0.35em;
+    padding-bottom: 0.35em;
 
     .camera {
         display: flex;
@@ -203,27 +198,13 @@ main {
 }
 
 /** Notification bar */
-
-
 .notification {
     display: inline-block;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-around;
-    width: 100%;
     font-size: 0.8em;
-    padding-bottom: 0.35em;
+    padding-top: 0.5em;
     color: white;
     text-align: right;
-}
-
-.callMeMaybe {
-    display: inline-block;
-    display: flex;
-    font-size: 0.9em;
-    color: white;
-    text-align: left;
+    padding-right: 1.2em;
 }
 
 .notification ul {
@@ -242,35 +223,28 @@ main {
     font-style: normal;
 }
 
-main {
-    background-image: url('/call-me-maybe/scss/assets/mudassir-ali-U_2EmiTI5KI-unsplash.jpg');
-    background-position: center center;
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: relative;
-}
-
-.main:before {
-    content: '';
-    background-image: url('/call-me-maybe/scss/assets/mudassir-ali-U_2EmiTI5KI-unsplash.jpg');
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    opacity: 0.75;
-    z-index: -1;
+.callMeMaybe {
+    display: inline-block;
+    padding-top: 0.5em;
+    font-size: 0.9em;
+    color: #fff;
+    text-align: left;
+    padding-left: 1.6em;
 }
 
 .screen {
     display: inline-block;
     min-height: 200px;
     box-sizing: border-box;
-    color: white;
-    position: relative;
-    font-family: $primary-font;
+    color: $darkgray;
+    background-image: linear-gradient(
+        180deg,
+        rgb(221, 255, 255) 25%,
+        rgba(234, 250, 250, 0.986) 65%,
+        rgba(255, 255, 255, 1) 100%
+    );
+    padding: 2em 0.5em 0.3em 0.5em;
+    margin: 0.5em 0 0 0;
 
     input[type="text"] {
         display: inline-block;
@@ -278,12 +252,10 @@ main {
         height: 100%;
         max-width: 100%;
         font-size: 1.2em;
-        font-weight: 600;
         padding-left: 0.8em;
-        padding-bottom: 0.2em;
-        padding-top: 0.5em;
+        padding-bottom: 0.3em;
         background-color: transparent;
-        color: white;
+        color: $darkgray;
         border: none;
     }
 
@@ -291,65 +263,11 @@ main {
     .numberbox {
         max-width: 100%;
         box-sizing: border-box;
-        font-size: 1.05em;
-        font-weight: 400;
+        font-size: 1.1em;
         padding-left: 1.6em;
-        padding-top: 0.1em;
+        padding-top: 0.2em;
         margin: 0;
         list-style: none;
-    }
-}
-
-.buttons-left-right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-around;
-
-    .button_left {
-        display: inline-block;
-        box-shadow: inset 0px 1px 0px 0px #d9fbbe;
-        background: linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
-        background-color: $green;
-        border-radius: 6px;
-        border: 1px solid #83c41a;
-        display: inline-block;
-        cursor: pointer;
-        margin: 0em 0em 0.3em 0em;
-        width: 7em;
-        height: 2em;
-
-        &:hover {
-            background: linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
-            background-color: #a5cc52;
-        }
-
-        &:active {
-            position: relative;
-        }
-    }
-
-    .button_right {
-        display: inline-block;
-        box-shadow: inset 0px 1px 0px 0px #f7c5c0;
-        background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
-        background-color: $red;
-        border-radius: 6px;
-        border: 1px solid #d83526;
-        display: inline-block;
-        cursor: pointer;
-        width: 7em;
-        height: 2em;
-        margin: 0em 0em 0.3em 0em;
-
-        &:hover {
-            background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
-            background-color: #e4685d;
-        }
-
-        &:active {
-            position: relative;
-        }
     }
 }
 
@@ -402,16 +320,71 @@ main {
     width: 0;
 }
 
+.button_left {
+    display: inline-block;
+    box-shadow: inset 0px 1px 0px 0px #d9fbbe;
+    background: linear-gradient(to bottom, #b8e356 5%, #a5cc52 100%);
+    background-color: $green;
+    border-radius: 6px;
+    border: 1px solid #83c41a;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 0 0.3em 1.7em;
+    width: 5.7em;
+    height: 2em;
+
+    &:hover {
+        background: linear-gradient(to bottom, #a5cc52 5%, #b8e356 100%);
+        background-color: #a5cc52;
+    }
+
+    &:active {
+        position: relative;
+    }
+}
+
+.button_right {
+    display: inline-block;
+    box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+    background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+    background-color: $red;
+    border-radius: 6px;
+    border: 1px solid #d83526;
+    display: inline-block;
+    cursor: pointer;
+    width: 5.7em;
+    height: 2em;
+    margin: 0 1.7em 0.3em 0;
+
+    &:hover {
+        background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+        background-color: #e4685d;
+    }
+
+    &:active {
+        position: relative;
+    }
+}
 
 .digits {
     display: block;
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 143, 145, 1) 50%,
+        rgba(0, 117, 119, 1) 60%,
+        rgba(0, 91, 94, 1) 70%,
+        rgba(0, 67, 71, 1) 80%,
+        rgba(0, 44, 48, 1) 90%,
+        rgba(0, 15, 28, 1) 100%
+    );
+
     margin: 0;
 }
 
 .digits--display {
     display: grid;
     list-style: none;
-    margin: 0em 1.3em 0.2em;
+    margin: 0.5em 0.8em 0.5em;
     padding: 0;
     grid-gap: 0;
     grid-template-columns: 1fr 1fr 1fr;
@@ -419,48 +392,88 @@ main {
     justify-items: center;
 }
 
-.button-digit {
-    background-color: transparent;
+.button {
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
+    background-color: #eeeeee;
+    background: linear-gradient(to right, #fbfbfb, #e1e1e1);
     display: inline-block;
     vertical-align: middle;
-    border: .2em solid #d4d4d4;
+    border: 1px solid #d4d4d4;
     font-family: $primary-font;
     font-weight: 600;
-    color: white;
+    color: $gray;
     text-shadow: 0 1px 1px white;
     margin: 0.2em 0;
     text-decoration: none;
     text-align: center;
 }
 
-.button-digit:hover {
-    background: linear-gradient(to right, #d5fafce7, #57a7ba);
+.button:hover {
+    background-color: #eeeeee;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(100%, #dcdcdc));
+    background: -webkit-linear-gradient(top, #ffffff, #dcdcdc);
+    background: -moz-linear-gradient(top, #ffffff, #dcdcdc);
+    background: -o-linear-gradient(top, #ffffff, #dcdcdc);
+    background: linear-gradient(top, #ffffff, #dcdcdc);
 }
 
-.button-digit:active {
-    background: transparent;
-    border: .2em solid #59ffff;
-    color: $darkgray;
+.button:active {
+    -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
+    -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
+    text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
+    background: #eeeeee;
+    border: 2px solid #59ffff;
+    color: #bbbbbb;
 }
 
-input.button-digit,
-button.button-digit {
-    height: 1.7em;
+input.button,
+button.button {
+    height: 1.85em;
     cursor: pointer;
-    text-align: center;
 }
 
 .button-block {
     display: block;
 }
 
+.button.disabled,
+.button.disabled:hover,
+.button.disabled:active,
+input.button:disabled,
+button.button:disabled {
+    -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    background: #eee;
+    border: 1px solid #02dce8;
+    text-shadow: 0 1px 1px white;
+    color: #ccc;
+    cursor: default;
+}
+
+.button-wrap {
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e3e3e3), color-stop(100%, #f2f2f2));
+    background: -webkit-linear-gradient(top, #e3e3e3, #f2f2f2);
+    background: -moz-linear-gradient(top, #e3e3e3, #f2f2f2);
+    background: -o-linear-gradient(top, #e3e3e3, #f2f2f2);
+    background: linear-gradient(top, #e3e3e3, #f2f2f2);
+    border-radius: 100%;
+    -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.04);
+    -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.04);
+    box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.04);
+    padding: 10px;
+    display: inline-block;
+}
+
 .button-circle {
     border-radius: 0.5em;
+    box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.2);
     width: 2.2em;
     height: 2em;
     padding: 0px;
     border-width: 0.2em;
-    font-size: 1.1em;
+    font-size: 1.3em;
 }
 
 // Phone bottom
@@ -472,12 +485,12 @@ button.button-digit {
 }
 
 .phone-bottom-circle div {
-    width: 1.3em;
-    height: 1.3em;
+    width: 1.5em;
+    height: 1.5em;
     border: 0.1em solid rgb(101, 101, 101);
     border-radius: 50%;
     background-color: $bg-phone-bottom;
-    margin: 0.13em 0;
+    margin: 0.14em 0;
 }
 
 // breakpoints adjustments
@@ -485,6 +498,22 @@ button.button-digit {
 @media (min-width: 320px) {
     .phone {
         margin-right: -0.4em;
+        font-size: 1.1em;
+    }
+
+    .screen {
+        padding: 2em 0.5em 0.3em 0.5em;
+    }
+}
+
+@media (min-width: 375px) {
+    .phone {
+        padding: 0 0.5em 0;
+        font-size: 1.1em;
+    }
+
+    .screen {
+        padding: 2em 0.5em 0.3em 0.5em;
     }
 }
 
