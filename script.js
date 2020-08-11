@@ -72,7 +72,7 @@ green_btn.addEventListener('dblclick', () => {
     let listOfSuccesCalls = JSON.parse(localStorage.getItem('successCalls'));
     let html = ``;
     listOfSuccesCalls.forEach(successCalls => {
-        html += `<li style="color: #212121">${successCalls}</li>`;
+        html += `<li style="color: white">${successCalls}</li>`;
     });
     console.log(html);
     ul.innerHTML = html;
@@ -86,7 +86,7 @@ red_btn.addEventListener('dblclick', () => {
     let listOfUnsuccesCalls = JSON.parse(localStorage.getItem('unsuccessCalls'));
     let html = ``;
     listOfUnsuccesCalls.forEach(unsuccessCalls => {
-        html += `<li style="color:darkpurple,padding-left:10px">${unsuccessCalls}</li>`;
+        html += `<li style="color:white,padding-left:10px">${unsuccessCalls}</li>`;
     });
     ul.innerHTML = html;
 })
