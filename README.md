@@ -29,8 +29,3 @@ help section (chat bubbles)
 web site must work on both desktop and mobile- on desktop whitespace around the cellphone is expected,
 on mobile not so much, feel free to choose any web site color pallet you see fit,
 provided visual is just a starting point; feel free to make the project more appealing with your selection of colors, custom spacings, type faces, animations, round corners...
-
-
-## Resources
-
-Photo by Mudassir Ali on Unsplash "https://unsplash.com/@pixelcop?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText" 
