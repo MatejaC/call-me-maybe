@@ -108,26 +108,16 @@ html *:after {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1 / 4;
-<<<<<<< HEAD
   -ms-grid-row: 5;
   grid-row: 5;
-=======
-  -ms-grid-row: 6;
-  grid-row: 6;
->>>>>>> master
 }
 
 .phone-bottom-circle {
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
   grid-column: 1 / 4;
-<<<<<<< HEAD
   -ms-grid-row: 6;
   grid-row: 6;
-=======
-  -ms-grid-row: 7;
-  grid-row: 7;
->>>>>>> master
 }
 
 .phone {
@@ -137,13 +127,8 @@ html *:after {
   display: grid;
   -ms-grid-columns: ([col] auto)[3];
       grid-template-columns: repeat(3, [col] auto);
-<<<<<<< HEAD
   -ms-grid-rows: ([row] auto)[6];
       grid-template-rows: repeat(6, [row] auto);
-=======
-  -ms-grid-rows: ([row] auto)[7];
-      grid-template-rows: repeat(7, [row] auto);
->>>>>>> master
   grid-gap: 0;
   max-height: 812px;
   max-width: 427px;
@@ -173,10 +158,6 @@ html *:after {
       justify-content: space-around;
   width: 100%;
   padding-top: 0.35em;
-<<<<<<< HEAD
-=======
-  padding-bottom: 0.35em;
->>>>>>> master
 }
 
 .top-bar .camera {
@@ -251,15 +232,9 @@ html *:after {
   display: inline-block;
   font-size: 0.8em;
   padding-top: 0.5em;
-<<<<<<< HEAD
   color: #fff;
   text-align: right;
   padding-right: 1.5em;
-=======
-  color: white;
-  text-align: right;
-  padding-right: 1.2em;
->>>>>>> master
 }
 
 .notification ul {
@@ -284,11 +259,7 @@ html *:after {
   font-size: 0.9em;
   color: #fff;
   text-align: left;
-<<<<<<< HEAD
   padding-left: 2em;
-=======
-  padding-left: 1.6em;
->>>>>>> master
 }
 
 .screen {
@@ -297,13 +268,8 @@ html *:after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   color: #212121;
-<<<<<<< HEAD
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(20%, #e3ffff), to(white));
   background-image: linear-gradient(0deg, #e3ffff 20%, white 100%);
-=======
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(25%, #ddffff), color-stop(65%, rgba(234, 250, 250, 0.986)), to(white));
-  background-image: linear-gradient(180deg, #ddffff 25%, rgba(234, 250, 250, 0.986) 65%, white 100%);
->>>>>>> master
   padding: 2em 0.5em 0.3em 0.5em;
   margin: 0.5em 0 0 0;
 }
@@ -339,15 +305,8 @@ html *:after {
   position: relative;
   padding: 0.2em;
   border: 0.2em solid #91cf6f;
-<<<<<<< HEAD
   color: #333;
   background: #fff;
-=======
-  color: #212121;
-  background: #fff;
-  font-size: 0.9em;
-  font-family: "Source Sans Pro", sans-serif;
->>>>>>> master
   /* css3 */
   border-radius: 10px;
   margin-top: -2em;
@@ -399,11 +358,7 @@ html *:after {
   display: inline-block;
   cursor: pointer;
   margin: 0 0 0.3em 1.7em;
-<<<<<<< HEAD
   width: 4em;
-=======
-  width: 5.7em;
->>>>>>> master
   height: 2em;
 }
 
@@ -428,11 +383,7 @@ html *:after {
   border: 1px solid #d83526;
   display: inline-block;
   cursor: pointer;
-<<<<<<< HEAD
   width: 4em;
-=======
-  width: 5.7em;
->>>>>>> master
   height: 2em;
   margin: 0 1.7em 0.3em 0;
 }
@@ -449,13 +400,8 @@ html *:after {
 
 .digits {
   display: block;
-<<<<<<< HEAD
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #004353), color-stop(20%, #245b6b), color-stop(30%, #3f7385), color-stop(40%, #598d9f), color-stop(50%, #74a7ba), color-stop(60%, #8fc2d5), color-stop(70%, #aadef2), color-stop(85%, #c6fbff));
   background-image: linear-gradient(0deg, #004353 10%, #245b6b 20%, #3f7385 30%, #598d9f 40%, #74a7ba 50%, #8fc2d5 60%, #aadef2 70%, #c6fbff 85%);
-=======
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #008f91), color-stop(60%, #007577), color-stop(70%, #005b5e), color-stop(80%, #004347), color-stop(90%, #002c30), to(#000f1c));
-  background-image: linear-gradient(180deg, #008f91 50%, #007577 60%, #005b5e 70%, #004347 80%, #002c30 90%, #000f1c 100%);
->>>>>>> master
   margin: 0;
 }
 
@@ -473,13 +419,10 @@ html *:after {
   justify-items: center;
 }
 
-<<<<<<< HEAD
 .digits--display .digit {
   font-weight: normal;
 }
 
-=======
->>>>>>> master
 .button {
   -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
           box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.5), 0px 1px 2px rgba(0, 0, 0, 0.15);
@@ -490,12 +433,7 @@ html *:after {
   vertical-align: middle;
   border: 1px solid #d4d4d4;
   font-family: "Source Sans Pro", sans-serif;
-<<<<<<< HEAD
   color: #666666;
-=======
-  font-weight: 600;
-  color: #4d4d4d;
->>>>>>> master
   text-shadow: 0 1px 1px white;
   margin: 0.2em 0;
   text-decoration: none;
@@ -513,21 +451,13 @@ html *:after {
   box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
   text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
   background: #eeeeee;
-<<<<<<< HEAD
   border: 2px solid #009bff;
-=======
-  border: 2px solid #59ffff;
->>>>>>> master
   color: #bbbbbb;
 }
 
 input.button,
 button.button {
-<<<<<<< HEAD
   height: 1.8em;
-=======
-  height: 1.85em;
->>>>>>> master
   cursor: pointer;
 }
 
@@ -588,11 +518,7 @@ button.button:disabled {
   border: 0.1em solid #656565;
   border-radius: 50%;
   background-color: #ececec;
-<<<<<<< HEAD
   margin: 0.18em 0;
-=======
-  margin: 0.14em 0;
->>>>>>> master
 }
 
 @media (min-width: 320px) {
@@ -608,17 +534,10 @@ button.button:disabled {
 
 @media (min-width: 375px) {
   .phone {
-<<<<<<< HEAD
     height: 100%;
     margin: 0 1em 0;
   }
   .phone .screen {
-=======
-    padding: 0 0.5em 0;
-    font-size: 1.1em;
-  }
-  .screen {
->>>>>>> master
     padding: 2em 0.5em 0.3em 0.5em;
   }
 }

@@ -103,31 +103,19 @@ html {
 
 .digits {
     grid-column: 1 / 4;
-<<<<<<< HEAD
     grid-row: 5;
-=======
-    grid-row: 6;
->>>>>>> master
 }
 
 .phone-bottom-circle {
     grid-column: 1 / 4;
-<<<<<<< HEAD
     grid-row: 6;
-=======
-    grid-row: 7;
->>>>>>> master
 }
 
 .phone {
     box-sizing: border-box;
     display: grid;
     grid-template-columns: repeat(3, [col] auto);
-<<<<<<< HEAD
     grid-template-rows: repeat(6, [row] auto);
-=======
-    grid-template-rows: repeat(7, [row] auto);
->>>>>>> master
     grid-gap: 0;
     max-height: 812px;
     max-width: 427px;
@@ -153,10 +141,6 @@ html {
     justify-content: space-around;
     width: 100%;
     padding-top: 0.35em;
-<<<<<<< HEAD
-=======
-    padding-bottom: 0.35em;
->>>>>>> master
 
     .camera {
         display: flex;
@@ -211,15 +195,9 @@ html {
     display: inline-block;
     font-size: 0.8em;
     padding-top: 0.5em;
-<<<<<<< HEAD
     color: #fff;
     text-align: right;
     padding-right: 1.5em;
-=======
-    color: white;
-    text-align: right;
-    padding-right: 1.2em;
->>>>>>> master
 }
 
 .notification ul {
@@ -244,11 +222,7 @@ html {
     font-size: 0.9em;
     color: #fff;
     text-align: left;
-<<<<<<< HEAD
     padding-left: 2em;
-=======
-    padding-left: 1.6em;
->>>>>>> master
 }
 
 .screen {
@@ -256,16 +230,7 @@ html {
     min-height: 300px;
     box-sizing: border-box;
     color: $darkgray;
-<<<<<<< HEAD
     background-image: linear-gradient(0deg, rgba(227, 255, 255, 1) 20%, rgba(255, 255, 255, 1) 100%);
-=======
-    background-image: linear-gradient(
-        180deg,
-        rgb(221, 255, 255) 25%,
-        rgba(234, 250, 250, 0.986) 65%,
-        rgba(255, 255, 255, 1) 100%
-    );
->>>>>>> master
     padding: 2em 0.5em 0.3em 0.5em;
     margin: 0.5em 0 0 0;
 
@@ -352,11 +317,7 @@ html {
     display: inline-block;
     cursor: pointer;
     margin: 0 0 0.3em 1.7em;
-<<<<<<< HEAD
     width: 4em;
-=======
-    width: 5.7em;
->>>>>>> master
     height: 2em;
 
     &:hover {
@@ -378,11 +339,7 @@ html {
     border: 1px solid #d83526;
     display: inline-block;
     cursor: pointer;
-<<<<<<< HEAD
     width: 4em;
-=======
-    width: 5.7em;
->>>>>>> master
     height: 2em;
     margin: 0 1.7em 0.3em 0;
 
@@ -399,7 +356,6 @@ html {
 .digits {
     display: block;
     background-image: linear-gradient(
-<<<<<<< HEAD
         0deg,
         rgba(0, 67, 83, 1) 10%,
         rgba(36, 91, 107, 1) 20%,
@@ -410,17 +366,6 @@ html {
         rgba(170, 222, 242, 1) 70%,
         rgba(198, 251, 255, 1) 85%
     );
-=======
-        180deg,
-        rgba(0, 143, 145, 1) 50%,
-        rgba(0, 117, 119, 1) 60%,
-        rgba(0, 91, 94, 1) 70%,
-        rgba(0, 67, 71, 1) 80%,
-        rgba(0, 44, 48, 1) 90%,
-        rgba(0, 15, 28, 1) 100%
-    );
-
->>>>>>> master
     margin: 0;
 }
 
@@ -447,12 +392,7 @@ html {
     vertical-align: middle;
     border: 1px solid #d4d4d4;
     font-family: $primary-font;
-<<<<<<< HEAD
     color: #666666;
-=======
-    font-weight: 600;
-    color: $gray;
->>>>>>> master
     text-shadow: 0 1px 1px white;
     margin: 0.2em 0;
     text-decoration: none;
@@ -474,21 +414,13 @@ html {
     box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px white;
     text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4);
     background: #eeeeee;
-<<<<<<< HEAD
     border: 2px solid #009bff;
-=======
-    border: 2px solid #59ffff;
->>>>>>> master
     color: #bbbbbb;
 }
 
 input.button,
 button.button {
-<<<<<<< HEAD
     height: 1.8em;
-=======
-    height: 1.85em;
->>>>>>> master
     cursor: pointer;
 }
 
@@ -548,13 +480,8 @@ button.button:disabled {
     height: 1.5em;
     border: 0.1em solid rgb(101, 101, 101);
     border-radius: 50%;
-<<<<<<< HEAD
     background-color: #ececec;
     margin: 0.18em 0;
-=======
-    background-color: $bg-phone-bottom;
-    margin: 0.14em 0;
->>>>>>> master
 }
 
 @media (min-width: 320px) {
@@ -571,21 +498,12 @@ button.button:disabled {
 
 @media (min-width: 375px) {
     .phone {
-<<<<<<< HEAD
         height: 100%;
         margin: 0 1em 0;
 
         .screen {
             padding: 2em 0.5em 0.3em 0.5em;
         }
-=======
-        padding: 0 0.5em 0;
-        font-size: 1.1em;
-    }
-
-    .screen {
-        padding: 2em 0.5em 0.3em 0.5em;
->>>>>>> master
     }
 }
 
@@ -623,12 +541,9 @@ button.button:disabled {
         margin: 3em 48em 20em 15em;
     }
 }
-<<<<<<< HEAD
 
 @media screen and (min-width: 1920px) {
     .phone {
         margin: 3em 60em 20em 30em;
     }
 }
-=======
->>>>>>> master
