@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0 user-scalable=0" />
-    <meta name="description" content="mobile phone application, an assigment for evolving in javascript">
     <title>callMeMaybe</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+Pro:wght@400;600&display=swap"
         rel="stylesheet">
@@ -14,75 +13,61 @@
 </head>
 
 <body onload="startTime()">
+
     <div class="phone">
-        <nav>
-            <div class="top-bar">
-                <div class="camera">
-                    <div class="outer-circle">
-                        <div class="smaller-circle"></div>
-                    </div>
-                </div>
-                <div class="speaker"></div>
-                <button class="help_button" id="help_button" onclick="toggle_visibility('messages');">Help !</button>
-            </div>
-            <div class="notification" aria-label="notification-icons-for-show-no-purpose">
-                <div class="callMeMaybe">callMeMaybe</div>
-                <ul>
-                    <li><i class="fa fa-clock-o" aria-hidden=" true"></i></li>
-                    <li><i class="fa fa-wifi" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-signal" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-battery-half" aria-hidden=" true"></i></li>
-                    <li><i id="time"></i></li>
-                </ul>
-
-
-            </div>
-        </nav>
-        <main>
-            <div class="screen"><input type="text" class="phoneNumber" id="phoneNo" name="phoneNumber" required />
-                <ul class="message numberbox" id="numberbox"></ul>
-                <div id="messages" class="messages" aria-label="messages-showing-entered-numbers-and-alert-messages">
-                    <p class="message_first bubble show-message" id="message_first" style="visibility:hidden;">"Enter
-                        number
-                        formated as 09xxxxxx or 09xxxxxxx"</p>
-                    <p class="message_second bubble" id="message_second" style="visibility:hidden;">"Double click the
-                        green
-                        button to see list of successful calls"</p>
-                    <p class="message_third bubble" id="message_third" style="visibility:hidden;">"Double click the red
-                        button to see list of unsuccessful calls"</p>
-                    <p class="message_fourth bubble" id="message_fourth" style="visibility:hidden;">Click <a
-                            href="https://github.com/MatejaC/call-me-maybe">here</a> for more info !"</p>
-                </div>
-                <div class="buttons-left-right">
-                    <button class="button_left" id="button_green"
-                        aria-label="green-button-on-left-side-clicable-for-calling-message-and-doubleclicked-for-showing-list-of-successfull-calls"
-                        aria-labelledby="button_green"></button>
-                    <button class="button_right" id="button_red"
-                        aria-label="red-button-on-right-side-clicable-for-alert-message-and-doubleclicked-for-showing-list-of-unsuccessfull-calls-and-clearing-screen"
-                        aria-labelledby="button_red"></button>
+        <div class="top-bar">
+            <div class="camera">
+                <div class="outer-circle">
+                    <div class="smaller-circle"></div>
                 </div>
             </div>
+            <div class="speaker"></div>
+            <button class="help_button" id="help_button" onclick="toggle_visibility('messages');">Help !</button>
+        </div>
 
-            <div class="digits" aria-labelledby="digits">
-                <ul class="digits--display" aria-label="digits-on-mobile-phone-clickable">
-                    <li><button value="1" class="digit button-digit button-circle">1</button></li>
-                    <li><button value="2" class="digit button-digit button-circle">2</button></li>
-                    <li><button value="3" class="digit button-digit button-circle">3</button></li>
-                    <li><button value="4" class="digit button-digit button-circle">4</button></li>
-                    <li><button value="5" class="digit button-digit button-circle">5</button></li>
-                    <li><button value="6" class="digit button-digit button-circle">6</button></li>
-                    <li><button value="7" class="digit button-digit button-circle">7</button></li>
-                    <li><button value="8" class="digit button-digit button-circle">8</button></li>
-                    <li><button value="9" class="digit button-digit button-circle">9</button></li>
-                    <li><button value="*" class="digit button-digit button-circle">*</button></li>
-                    <li><button value="0" class="digit button-digit button-circle">0</button></li>
-                    <li><button value="#" class="digit button-digit button-circle">#</button></li>
-                </ul>
+        <div class="notification">
+            <ul>
+                <li><i class="fa fa-clock-o" aria-hidden=" true"></i></li>
+                <li><i class="fa fa-wifi" aria-hidden="true"></i></li>
+                <li><i class="fa fa-signal" aria-hidden="true"></i></li>
+                <li><i class="fa fa-battery-half" aria-hidden=" true"></i></li>
+                <li><i id="time"></i></li>
+            </ul>
+
+        </div>
+        <div class="callMeMaybe">callMeMaybe</div>
+        <div class="screen"><input type="text" class="phoneNumber" id="phoneNo" name="phoneNumber" required />
+            <ul class="message numberbox" id="numberbox"></ul>
+            <div id="messages" class="messages">
+                <p class="message_first bubble show-message" id="message_first" style="visibility:hidden;">"Enter
+                    number
+                    formated as 09xxxxxx or 09xxxxxxx"</p>
+                <p class="message_second bubble" id="message_second" style="visibility:hidden;">"Double click the
+                    green
+                    button to see list of successful calls"</p>
+                <p class="message_third bubble" id="message_third" style="visibility:hidden;">"Double click the red
+                    button to see list of unsuccessful calls"</p>
+                <p class="message_fourth bubble" id="message_fourth" style="visibility:hidden;">Click <a
+                        href="https://github.com/MatejaC/call-me-maybe">here</a>for more info !"</p>
             </div>
-        </main>
-        <footer class="phone-bottom-circle">
-            <div></div>
-        </footer>
+        </div><button class="button_left" id="button_green"></button><button class="button_right"
+            id="button_red"></button>
+        <div class="digits">
+            <ul class="digits--display">
+                <li><button value="1" class="digit button button-circle">1</button></li>
+                <li><button value="2" class="digit button button-circle">2</button></li>
+                <li><button value="3" class="digit button button-circle">3</button></li>
+                <li><button value="4" class="digit button button-circle">4</button></li>
+                <li><button value="5" class="digit button button-circle">5</button></li>
+                <li><button value="6" class="digit button button-circle">6</button></li>
+                <li><button value="7" class="digit button button-circle">7</button></li>
+                <li><button value="8" class="digit button button-circle">8</button></li>
+                <li><button value="9" class="digit button button-circle">9</button></li>
+                <li><button value="*" class="digit button button-circle">*</button></li>
+                <li><button value="0" class="digit button button-circle">0</button></li>
+                <li><button value="#" class="digit button button-circle">#</button></li>
+            </ul>
+        </div>
     </div>
     <script src="script.js "></script>
 </body>
